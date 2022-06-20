@@ -1,0 +1,39 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+before_script:
+  #- apk add --update py-pip
+  - apk add --no-cache python3 py-pip git rsync sshpass openssh curl
+  - pip install --no-cache-dir docker-compose==1.16.0
+  - mkdir -p ~/.ssh && chmod 777 ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  - docker info
+stages:
+
+  - deploy
+  - notify
+
+prod:
+  stage: deploy
+  environment:
+    name: Production
+    url: https://api.oksgroup.uz/
+
+  script:
+    - sshpass -p $SSH_PASS_PROD rsync -riz --links -e "ssh -o StrictHostKeyChecking=no" $SSH_DIRECTORY_LOCAL_PROD $SSH_USER_PROD@$SSH_HOST_PROD:$SSH_DIRECTORY_REMOTE_PROD
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan migrate && php artisan module:migrate Translations && php artisan module:migrate Filemanager && php artisan passport:install"
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan key:generate && php artisan config:cache"
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan db:seed --class=FakerSeeder"
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan apidoc:generate"
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan migrate"
+    #- sshpass -p $SSH_PASS_PROD ssh $SSH_USER_PROD@$SSH_HOST_PROD "cd $SSH_DIRECTORY_REMOTE_PROD && php artisan passport:install"
+    - sh .ci-notify.sh ✅
+  only:
+    - main
+notify_error:
+  stage: notify
+  script:
+    - sh .ci-error-notify.sh ❌
+  when: on_failure #deploy fail

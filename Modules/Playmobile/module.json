@@ -1,0 +1,13 @@
+{
+    "name": "Playmobile",
+    "alias": "playmobile",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Playmobile\\Providers\\PlaymobileServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,88 @@
+version: "3"
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/app
+    depends_on:
+      - mysql
+      - postgres
+      - mailcatcher
+    environment:
+      - PHP_VERSION=5.6-fpm
+
+  webpacker:
+    image: node:9-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: /bin/true
+
+  nginx:
+    image: 'nginx:alpine'
+    restart: always
+    volumes:
+      - './docker/nginx//nginx.template:/etc/nginx/conf.d/nginx.template'
+      - './:/app'
+      - './.logs/nginx:/var/log/nginx'
+    ports:
+      - '80:80'
+      - '81:81'
+      - '82:82'
+    environment:
+      - NGINX_API_HOST=api.vodiy-bozor.loc
+      - NGINX_API_PORT=80
+      - NGINX_BACKEND_HOST=oks.vodiy-bozor.loc
+      - NGINX_BACKEND_PORT=80
+      - NGINX_FRONTEND_HOST=vodiy-bozor.loc
+      - NGINX_FRONTEND_PORT=80
+      command: sh -c "envsubst '$$NGINX_BACKEND_HOST $$NGINX_BACKEND_PORT $$NGINX_FRONTEND_HOST $$NGINX_FRONTEND_PORT $$NGINX_API_HOST $$NGINX_API_PORT' < /etc/nginx/conf.d/nginx.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+      depends_on:
+        - php
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+      - ./docker/mysql/config.cnf:/etc/mysql/conf.d/config.cnf
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: yii_db_mysql
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+  rabbitmq:
+    image: 'rabbitmq:alpine'
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    ports:
+      - '8080:15672'
+      - '5672:5672'
+      - '4369:4369'
+      - '25672:25672'
+    volumes:
+      - './.rabbitmq:/var/lib/rabbitmq'
+  memcache:
+    image: 'memcached:alpine'
+    restart: always
+  postgres:
+    build: ./docker/postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=yii_db_test
+      - DB_NAME=yii_db_testing
+      - DB_USER=yii_user_testing
+      - DB_PASS=yii_password_testing
+    volumes:
+      - './.database:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
+  mailcatcher:
+      image: schickling/mailcatcher:latest
+      ports:
+        - 1080:1080
