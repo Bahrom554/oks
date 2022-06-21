@@ -8,8 +8,7 @@ use Modules\Filemanager\Entities\Files;
 
 class StatisticItem extends Model
 {
-    protected $table = 'statisticitem';
-    protected $with =['file'];
+    protected $table = 'statistic_item';
 
     protected $fillable = ['created_at', 'deleted_at', 'description', 'file_id', 'parent_id', 'secondary', 'sort', 'status', 'title', 'updated_at',];
 

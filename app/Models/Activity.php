@@ -10,8 +10,8 @@ use Modules\Filemanager\Entities\Files;
 class Activity extends Model
 {
     use Translatable;
-    protected $table = 'activty';
-    protected $with = ['file'];
+    protected $table = 'activity';
+    protected $with =['file'];
 
     protected $fillable = ['created_at', 'deleted_at', 'description', 'file_id', 'lang', 'lang_hash', 'link', 'sort', 'status', 'title', 'type', 'updated_at',];
 
@@ -33,7 +33,6 @@ class Activity extends Model
 
         ];
     }
-
     public function setTitleAttribute($value)
     {
         $this->setTranslation($value, 'title');
@@ -41,12 +40,11 @@ class Activity extends Model
 
     public function getTranslationsAttribute(): array
     {
-        return $this->getTranslation('activty');
+        return $this->getTranslation('banners');
     }
 
     public function file(): BelongsTo
     {
         return $this->belongsTo(Files::class);
     }
-
 }

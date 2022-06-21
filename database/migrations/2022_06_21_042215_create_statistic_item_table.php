@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStatisticitemTable extends Migration
+class CreateStatisticItemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStatisticitemTable extends Migration
      */
     public function up()
     {
-        Schema::create('statisticitem', function (Blueprint $table) {
+        Schema::create('statistic_item', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('secondary')->nullable();
@@ -34,6 +34,6 @@ class CreateStatisticitemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statisticitem');
+        Schema::dropIfExists('statistic_item');
     }
 }

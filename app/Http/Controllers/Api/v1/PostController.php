@@ -145,14 +145,14 @@ class PostController extends ApiController
         $request->validate($this->modelClass::rules());
         $model = $this->modelClass::create($request->all());
 
-        if (is_array($request->tags)) {
-            foreach ($request->tags as $tag) {
-                DB::table('tag_post')->insert([
-                    'tag_id' => $tag,
-                    'post_id' => $model->id,
-                ]);
-            }
-        }
+//        if (is_array($request->tags)) {
+//            foreach ($request->tags as $tag) {
+//                DB::table('tag_post')->insert([
+//                    'tag_id' => $tag,
+//                    'post_id' => $model->id,
+//                ]);
+//            }
+//        }
 
         if (!empty($request->append)) {
             $model->append(explode(',', $request->append));
@@ -198,18 +198,18 @@ class PostController extends ApiController
         $model = $this->modelClass::findOrFail($id);
         $model->update($request->all());
 
-        if (is_array($request->tags)) {
-            DB::table('tag_post')
-                ->where(['post_id' => $model->id])
-                ->delete();
-            foreach ($request->tags as $tag) {
-                DB::table('tag_post')
-                    ->insert([
-                        'tag_id' => $tag,
-                        'post_id' => $model->id,
-                    ]);
-            }
-        }
+//        if (is_array($request->tags)) {
+//            DB::table('tag_post')
+//                ->where(['post_id' => $model->id])
+//                ->delete();
+//            foreach ($request->tags as $tag) {
+//                DB::table('tag_post')
+//                    ->insert([
+//                        'tag_id' => $tag,
+//                        'post_id' => $model->id,
+//                    ]);
+//            }
+//        }
 
         if (!empty($request->append)) {
             $model->append(explode(',', $request->append));

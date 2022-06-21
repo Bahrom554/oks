@@ -19,27 +19,26 @@ class ActivityController extends ApiController
     public $modelClass = Activity::class;
 
     /**
-    * Activity Get all
-    *
-    * @response {
-    *  "created_at": "datetime",
-*  "deleted_at": "datetime",
-*  "description": "string",
-*  "file_id": "integer",
-*  "id": "bigint",
-*  "lang": "integer",
-*  "lang_hash": "string",
-*  "link": "string",
-*  "sort": "integer",
-*  "status": "integer",
-*  "title": "string",
-*  "type": "integer",
-*  "updated_at": "datetime",
-
-    * "roles": ["admin"]
-    * }
-    * @var Request $request
-    */
+     * Activity Get all
+     *
+     * @response {
+     *  "created_at": "datetime",
+     *  "deleted_at": "datetime",
+     *  "description": "string",
+     *  "file_id": "integer",
+     *  "id": "bigint",
+     *  "lang": "integer",
+     *  "lang_hash": "string",
+     *  "link": "string",
+     *  "sort": "integer",
+     *  "status": "integer",
+     *  "title": "string",
+     *  "type": "integer",
+     *  "updated_at": "datetime",
+     * "roles": ["admin"]
+     * }
+     * @var Request $request
+     */
     public function index(Request $request)
     {
         $filters = $request->get('filter');
@@ -60,28 +59,27 @@ class ActivityController extends ApiController
     }
 
     /**
-    * Activity view
-    *
-    * @queryParam id required ID
-    * @var $id
-    * @response {
-    *  "created_at": "datetime",
-*  "deleted_at": "datetime",
-*  "description": "string",
-*  "file_id": "integer",
-*  "id": "bigint",
-*  "lang": "integer",
-*  "lang_hash": "string",
-*  "link": "string",
-*  "sort": "integer",
-*  "status": "integer",
-*  "title": "string",
-*  "type": "integer",
-*  "updated_at": "datetime",
-
-    * "roles": ["all"]
-    * }
-    */
+     * Activity view
+     *
+     * @queryParam id required ID
+     * @var $id
+     * @response {
+     *  "created_at": "datetime",
+     *  "deleted_at": "datetime",
+     *  "description": "string",
+     *  "file_id": "integer",
+     *  "id": "bigint",
+     *  "lang": "integer",
+     *  "lang_hash": "string",
+     *  "link": "string",
+     *  "sort": "integer",
+     *  "status": "integer",
+     *  "title": "string",
+     *  "type": "integer",
+     *  "updated_at": "datetime",
+     * "roles": ["all"]
+     * }
+     */
     public function show(Request $request, $id)
     {
         $model = $this->modelClass::findOrFail($id);
@@ -100,19 +98,18 @@ class ActivityController extends ApiController
      * Activity create
      *
      * @bodyParam created_at datetime no-required created_at
-* @bodyParam deleted_at datetime no-required deleted_at
-* @bodyParam description string no-required description
-* @bodyParam file_id integer no-required file_id
-* @bodyParam id bigint no-required id
-* @bodyParam lang integer no-required lang
-* @bodyParam lang_hash string no-required lang_hash
-* @bodyParam link string no-required link
-* @bodyParam sort integer no-required sort
-* @bodyParam status integer no-required status
-* @bodyParam title string no-required title
-* @bodyParam type integer no-required type
-* @bodyParam updated_at datetime no-required updated_at
-
+     * @bodyParam deleted_at datetime no-required deleted_at
+     * @bodyParam description string no-required description
+     * @bodyParam file_id integer no-required file_id
+     * @bodyParam id bigint no-required id
+     * @bodyParam lang integer no-required lang
+     * @bodyParam lang_hash string no-required lang_hash
+     * @bodyParam link string no-required link
+     * @bodyParam sort integer no-required sort
+     * @bodyParam status integer no-required status
+     * @bodyParam title string no-required title
+     * @bodyParam type integer no-required type
+     * @bodyParam updated_at datetime no-required updated_at
      *
      * @var Request $request
      */
@@ -136,19 +133,18 @@ class ActivityController extends ApiController
      *
      * @queryParam id required ID
      * @bodyParam created_at datetime no-required created_at
-* @bodyParam deleted_at datetime no-required deleted_at
-* @bodyParam description string no-required description
-* @bodyParam file_id integer no-required file_id
-* @bodyParam id bigint no-required id
-* @bodyParam lang integer no-required lang
-* @bodyParam lang_hash string no-required lang_hash
-* @bodyParam link string no-required link
-* @bodyParam sort integer no-required sort
-* @bodyParam status integer no-required status
-* @bodyParam title string no-required title
-* @bodyParam type integer no-required type
-* @bodyParam updated_at datetime no-required updated_at
-
+     * @bodyParam deleted_at datetime no-required deleted_at
+     * @bodyParam description string no-required description
+     * @bodyParam file_id integer no-required file_id
+     * @bodyParam id bigint no-required id
+     * @bodyParam lang integer no-required lang
+     * @bodyParam lang_hash string no-required lang_hash
+     * @bodyParam link string no-required link
+     * @bodyParam sort integer no-required sort
+     * @bodyParam status integer no-required status
+     * @bodyParam title string no-required title
+     * @bodyParam type integer no-required type
+     * @bodyParam updated_at datetime no-required updated_at
      *
      * @var $id
      * @var Request $request

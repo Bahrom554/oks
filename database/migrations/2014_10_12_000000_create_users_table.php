@@ -22,10 +22,6 @@ class CreateUsersTable extends Migration
             $table->integer('photo')->nullable();
             $table->integer('status')->default(1);
             $table->integer('type')->nullable();
-            $table->unsignedBigInteger('region_id')->index()->nullable();
-            $table->foreign('region_id')->references('id')->on('region');
-            $table->unsignedBigInteger('district_id')->index()->nullable();
-            $table->foreign('district_id')->references('id')->on('district');
             $table->string('address')->nullable();
             $table->rememberToken();
             $table->softDeletes();
