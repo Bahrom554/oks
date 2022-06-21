@@ -22,15 +22,16 @@ class StatisticController extends ApiController
     * Statistic Get all
     *
     * @response {
-    *  "id": "bigint",
-*  "title": "string",
-*  "alias": "string",
-*  "status": "integer",
-*  "type": "integer",
+    *  "created_at": "datetime",
+*  "eur": "integer",
+*  "id": "bigint",
 *  "lang": "integer",
 *  "lang_hash": "string",
-*  "created_at": "datetime",
+*  "rub": "integer",
+*  "type": "integer",
 *  "updated_at": "datetime",
+*  "uran": "integer",
+*  "usd": "integer",
 
     * "roles": ["admin"]
     * }
@@ -61,15 +62,16 @@ class StatisticController extends ApiController
     * @queryParam id required ID
     * @var $id
     * @response {
-    *  "id": "bigint",
-*  "title": "string",
-*  "alias": "string",
-*  "status": "integer",
-*  "type": "integer",
+    *  "created_at": "datetime",
+*  "eur": "integer",
+*  "id": "bigint",
 *  "lang": "integer",
 *  "lang_hash": "string",
-*  "created_at": "datetime",
+*  "rub": "integer",
+*  "type": "integer",
 *  "updated_at": "datetime",
+*  "uran": "integer",
+*  "usd": "integer",
 
     * "roles": ["all"]
     * }
@@ -91,15 +93,16 @@ class StatisticController extends ApiController
     /**
      * Statistic create
      *
-     * @bodyParam id bigint no-required id
-* @bodyParam title string no-required title
-* @bodyParam alias string no-required alias
-* @bodyParam status integer no-required status
-* @bodyParam type integer no-required type
+     * @bodyParam created_at datetime no-required created_at
+* @bodyParam eur integer no-required eur
+* @bodyParam id bigint no-required id
 * @bodyParam lang integer no-required lang
 * @bodyParam lang_hash string no-required lang_hash
-* @bodyParam created_at datetime no-required created_at
+* @bodyParam rub integer no-required rub
+* @bodyParam type integer no-required type
 * @bodyParam updated_at datetime no-required updated_at
+* @bodyParam uran integer no-required uran
+* @bodyParam usd integer no-required usd
 
      *
      * @var Request $request
@@ -123,15 +126,16 @@ class StatisticController extends ApiController
      * Statistic update
      *
      * @queryParam id required ID
-     * @bodyParam id bigint no-required id
-* @bodyParam title string no-required title
-* @bodyParam alias string no-required alias
-* @bodyParam status integer no-required status
-* @bodyParam type integer no-required type
+     * @bodyParam created_at datetime no-required created_at
+* @bodyParam eur integer no-required eur
+* @bodyParam id bigint no-required id
 * @bodyParam lang integer no-required lang
 * @bodyParam lang_hash string no-required lang_hash
-* @bodyParam created_at datetime no-required created_at
+* @bodyParam rub integer no-required rub
+* @bodyParam type integer no-required type
 * @bodyParam updated_at datetime no-required updated_at
+* @bodyParam uran integer no-required uran
+* @bodyParam usd integer no-required usd
 
      *
      * @var $id

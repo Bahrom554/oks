@@ -23,474 +23,6 @@ Welcome to the generated API reference.
 #Activity
 
 
-<!-- START_8f68192dc1dfe612cbce2edafe578e85 -->
-## Activity Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/activty" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/activty"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "lang": "integer",
-    "lang_hash": "string",
-    "link": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "type": "integer",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/activty`
-
-
-<!-- END_8f68192dc1dfe612cbce2edafe578e85 -->
-
-<!-- START_0ee04928fef9034b0b8530d316544495 -->
-## Activity create
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://api.oksgroup.uz/api/v1/admin/activty" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"created_at":"doloribus","deleted_at":"et","description":"et","file_id":20,"id":"dignissimos","lang":4,"lang_hash":"eaque","link":"et","sort":19,"status":16,"title":"iste","type":7,"updated_at":"voluptas"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/activty"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "created_at": "doloribus",
-    "deleted_at": "et",
-    "description": "et",
-    "file_id": 20,
-    "id": "dignissimos",
-    "lang": 4,
-    "lang_hash": "eaque",
-    "link": "et",
-    "sort": 19,
-    "status": 16,
-    "title": "iste",
-    "type": 7,
-    "updated_at": "voluptas"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/v1/admin/activty`
-
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
-        `deleted_at` | datetime |  optional  | no-required deleted_at
-        `description` | string |  optional  | no-required description
-        `file_id` | integer |  optional  | no-required file_id
-        `id` | bigint |  optional  | no-required id
-        `lang` | integer |  optional  | no-required lang
-        `lang_hash` | string |  optional  | no-required lang_hash
-        `link` | string |  optional  | no-required link
-        `sort` | integer |  optional  | no-required sort
-        `status` | integer |  optional  | no-required status
-        `title` | string |  optional  | no-required title
-        `type` | integer |  optional  | no-required type
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_0ee04928fef9034b0b8530d316544495 -->
-
-<!-- START_b4b8c958fbd813c161cc336f2020876c -->
-## Activity update
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/activty/1?id=qui" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"created_at":"dolore","deleted_at":"veritatis","description":"neque","file_id":20,"id":"ut","lang":10,"lang_hash":"reiciendis","link":"facere","sort":1,"status":17,"title":"ullam","type":4,"updated_at":"sint"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/activty/1"
-);
-
-let params = {
-    "id": "qui",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "created_at": "dolore",
-    "deleted_at": "veritatis",
-    "description": "neque",
-    "file_id": 20,
-    "id": "ut",
-    "lang": 10,
-    "lang_hash": "reiciendis",
-    "link": "facere",
-    "sort": 1,
-    "status": 17,
-    "title": "ullam",
-    "type": 4,
-    "updated_at": "sint"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/v1/admin/activty/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
-        `deleted_at` | datetime |  optional  | no-required deleted_at
-        `description` | string |  optional  | no-required description
-        `file_id` | integer |  optional  | no-required file_id
-        `id` | bigint |  optional  | no-required id
-        `lang` | integer |  optional  | no-required lang
-        `lang_hash` | string |  optional  | no-required lang_hash
-        `link` | string |  optional  | no-required link
-        `sort` | integer |  optional  | no-required sort
-        `status` | integer |  optional  | no-required status
-        `title` | string |  optional  | no-required title
-        `type` | integer |  optional  | no-required type
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_b4b8c958fbd813c161cc336f2020876c -->
-
-<!-- START_68300f03b01fa71c7f5ba70c3e79867c -->
-## Activity view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/activty/1?id=tenetur" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/activty/1"
-);
-
-let params = {
-    "id": "tenetur",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "lang": "integer",
-    "lang_hash": "string",
-    "link": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "type": "integer",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/activty/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_68300f03b01fa71c7f5ba70c3e79867c -->
-
-<!-- START_5e2d0670be3d117c5beaf50d369dbbe1 -->
-## Activity delete
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/activty/1?id=molestiae" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/activty/1"
-);
-
-let params = {
-    "id": "molestiae",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE api/v1/admin/activty/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_5e2d0670be3d117c5beaf50d369dbbe1 -->
-
-<!-- START_5287d15d35d19bf2078e1553cdd5c439 -->
-## Activity Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/activty" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/activty"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "lang": "integer",
-    "lang_hash": "string",
-    "link": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "type": "integer",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/activty`
-
-
-<!-- END_5287d15d35d19bf2078e1553cdd5c439 -->
-
-<!-- START_f83e87a5a02f4539dd888438a567cd16 -->
-## Activity view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/activty/1?id=molestias" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/activty/1"
-);
-
-let params = {
-    "id": "molestias",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "lang": "integer",
-    "lang_hash": "string",
-    "link": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "type": "integer",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/activty/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_f83e87a5a02f4539dd888438a567cd16 -->
-
 <!-- START_20fc6485509f59e13795c41b75c38754 -->
 ## Activity Get all
 
@@ -561,7 +93,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/activity" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"created_at":"aspernatur","deleted_at":"qui","description":"sit","file_id":17,"id":"molestiae","lang":5,"lang_hash":"et","link":"facilis","sort":17,"status":19,"title":"reiciendis","type":7,"updated_at":"iste"}'
+    -d '{"created_at":"voluptatem","deleted_at":"sit","description":"porro","file_id":1,"id":"voluptatem","lang":7,"lang_hash":"aperiam","link":"rerum","sort":17,"status":19,"title":"maxime","type":18,"updated_at":"eveniet"}'
 
 ```
 
@@ -576,19 +108,19 @@ let headers = {
 };
 
 let body = {
-    "created_at": "aspernatur",
-    "deleted_at": "qui",
-    "description": "sit",
-    "file_id": 17,
-    "id": "molestiae",
-    "lang": 5,
-    "lang_hash": "et",
-    "link": "facilis",
+    "created_at": "voluptatem",
+    "deleted_at": "sit",
+    "description": "porro",
+    "file_id": 1,
+    "id": "voluptatem",
+    "lang": 7,
+    "lang_hash": "aperiam",
+    "link": "rerum",
     "sort": 17,
     "status": 19,
-    "title": "reiciendis",
-    "type": 7,
-    "updated_at": "iste"
+    "title": "maxime",
+    "type": 18,
+    "updated_at": "eveniet"
 }
 
 fetch(url, {
@@ -631,10 +163,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/activity/1?id=inventore" \
+    "http://api.oksgroup.uz/api/v1/admin/activity/1?id=rerum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"created_at":"ut","deleted_at":"quia","description":"quia","file_id":8,"id":"dolore","lang":17,"lang_hash":"omnis","link":"odit","sort":15,"status":4,"title":"debitis","type":20,"updated_at":"est"}'
+    -d '{"created_at":"alias","deleted_at":"mollitia","description":"dolorem","file_id":10,"id":"aliquam","lang":11,"lang_hash":"maxime","link":"fugiat","sort":2,"status":6,"title":"voluptatibus","type":3,"updated_at":"consequatur"}'
 
 ```
 
@@ -644,7 +176,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "inventore",
+    "id": "rerum",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -655,19 +187,19 @@ let headers = {
 };
 
 let body = {
-    "created_at": "ut",
-    "deleted_at": "quia",
-    "description": "quia",
-    "file_id": 8,
-    "id": "dolore",
-    "lang": 17,
-    "lang_hash": "omnis",
-    "link": "odit",
-    "sort": 15,
-    "status": 4,
-    "title": "debitis",
-    "type": 20,
-    "updated_at": "est"
+    "created_at": "alias",
+    "deleted_at": "mollitia",
+    "description": "dolorem",
+    "file_id": 10,
+    "id": "aliquam",
+    "lang": 11,
+    "lang_hash": "maxime",
+    "link": "fugiat",
+    "sort": 2,
+    "status": 6,
+    "title": "voluptatibus",
+    "type": 3,
+    "updated_at": "consequatur"
 }
 
 fetch(url, {
@@ -715,7 +247,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/activity/1?id=et" \
+    -G "http://api.oksgroup.uz/api/v1/admin/activity/1?id=odit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -726,7 +258,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "et",
+    "id": "odit",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -786,7 +318,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/activity/1?id=qui" \
+    "http://api.oksgroup.uz/api/v1/admin/activity/1?id=quibusdam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -797,7 +329,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "qui",
+    "id": "quibusdam",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -895,7 +427,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/activity/1?id=ipsam" \
+    -G "http://api.oksgroup.uz/api/v1/activity/1?id=hic" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -906,7 +438,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "ipsam",
+    "id": "hic",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1031,7 +563,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/banners" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"dicta","title":"qui","description":"saepe","link":"atque","type":20,"sort":10,"file_id":2,"lang":5,"lang_hash":"ut","status":17,"created_at":"blanditiis","updated_at":"omnis"}'
+    -d '{"id":"ea","title":"magni","description":"in","link":"qui","type":13,"sort":18,"file_id":6,"lang":7,"lang_hash":"iste","status":6,"created_at":"ad","updated_at":"eligendi"}'
 
 ```
 
@@ -1046,18 +578,18 @@ let headers = {
 };
 
 let body = {
-    "id": "dicta",
-    "title": "qui",
-    "description": "saepe",
-    "link": "atque",
-    "type": 20,
-    "sort": 10,
-    "file_id": 2,
-    "lang": 5,
-    "lang_hash": "ut",
-    "status": 17,
-    "created_at": "blanditiis",
-    "updated_at": "omnis"
+    "id": "ea",
+    "title": "magni",
+    "description": "in",
+    "link": "qui",
+    "type": 13,
+    "sort": 18,
+    "file_id": 6,
+    "lang": 7,
+    "lang_hash": "iste",
+    "status": 6,
+    "created_at": "ad",
+    "updated_at": "eligendi"
 }
 
 fetch(url, {
@@ -1099,10 +631,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/banners/1?id=commodi" \
+    "http://api.oksgroup.uz/api/v1/admin/banners/1?id=eos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"nam","title":"numquam","description":"et","link":"est","type":14,"sort":19,"file_id":19,"lang":8,"lang_hash":"assumenda","status":14,"created_at":"beatae","updated_at":"cumque"}'
+    -d '{"id":"id","title":"dolores","description":"porro","link":"ut","type":15,"sort":13,"file_id":9,"lang":5,"lang_hash":"sunt","status":14,"created_at":"non","updated_at":"sint"}'
 
 ```
 
@@ -1112,7 +644,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "commodi",
+    "id": "eos",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1123,18 +655,18 @@ let headers = {
 };
 
 let body = {
-    "id": "nam",
-    "title": "numquam",
-    "description": "et",
-    "link": "est",
-    "type": 14,
-    "sort": 19,
-    "file_id": 19,
-    "lang": 8,
-    "lang_hash": "assumenda",
+    "id": "id",
+    "title": "dolores",
+    "description": "porro",
+    "link": "ut",
+    "type": 15,
+    "sort": 13,
+    "file_id": 9,
+    "lang": 5,
+    "lang_hash": "sunt",
     "status": 14,
-    "created_at": "beatae",
-    "updated_at": "cumque"
+    "created_at": "non",
+    "updated_at": "sint"
 }
 
 fetch(url, {
@@ -1181,7 +713,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/banners/1?id=dignissimos" \
+    -G "http://api.oksgroup.uz/api/v1/admin/banners/1?id=enim" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1192,7 +724,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "dignissimos",
+    "id": "enim",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1251,7 +783,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/banners/1?id=culpa" \
+    "http://api.oksgroup.uz/api/v1/admin/banners/1?id=sint" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1262,7 +794,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "culpa",
+    "id": "sint",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1359,7 +891,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/banners/1?id=quo" \
+    -G "http://api.oksgroup.uz/api/v1/banners/1?id=vel" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1370,7 +902,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "quo",
+    "id": "vel",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1421,6 +953,469 @@ Parameter | Status | Description
     `id` |  required  | ID
 
 <!-- END_4d938392e5baf8bbde3854b9642c3db0 -->
+
+#Document
+
+
+<!-- START_cfb5dd02966119cbcc4708bb07cceac1 -->
+## Document Get all
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://api.oksgroup.uz/api/v1/admin/documents" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/admin/documents"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "created_at": "datetime",
+    "deleted_at": "datetime",
+    "description": "string",
+    "file_id": "integer",
+    "id": "bigint",
+    "lang": "integer",
+    "lang_hash": "string",
+    "sort": "integer",
+    "status": "integer",
+    "title": "string",
+    "type": "integer",
+    "updated_at": "datetime",
+    "roles": [
+        "admin"
+    ]
+}
+```
+
+### HTTP Request
+`GET api/v1/admin/documents`
+
+
+<!-- END_cfb5dd02966119cbcc4708bb07cceac1 -->
+
+<!-- START_2e105ec0978007e464092f4edecf5caa -->
+## Document create
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://api.oksgroup.uz/api/v1/admin/documents" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"created_at":"non","deleted_at":"eveniet","description":"repudiandae","file_id":14,"id":"et","lang":12,"lang_hash":"at","sort":20,"status":11,"title":"facilis","type":5,"updated_at":"adipisci"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/admin/documents"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "created_at": "non",
+    "deleted_at": "eveniet",
+    "description": "repudiandae",
+    "file_id": 14,
+    "id": "et",
+    "lang": 12,
+    "lang_hash": "at",
+    "sort": 20,
+    "status": 11,
+    "title": "facilis",
+    "type": 5,
+    "updated_at": "adipisci"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/v1/admin/documents`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `created_at` | datetime |  optional  | no-required created_at
+        `deleted_at` | datetime |  optional  | no-required deleted_at
+        `description` | string |  optional  | no-required description
+        `file_id` | integer |  optional  | no-required file_id
+        `id` | bigint |  optional  | no-required id
+        `lang` | integer |  optional  | no-required lang
+        `lang_hash` | string |  optional  | no-required lang_hash
+        `sort` | integer |  optional  | no-required sort
+        `status` | integer |  optional  | no-required status
+        `title` | string |  optional  | no-required title
+        `type` | integer |  optional  | no-required type
+        `updated_at` | datetime |  optional  | no-required updated_at
+    
+<!-- END_2e105ec0978007e464092f4edecf5caa -->
+
+<!-- START_0784bf0842f27599c9837f8bd13d6b50 -->
+## Document update
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://api.oksgroup.uz/api/v1/admin/documents/1?id=officiis" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"created_at":"aspernatur","deleted_at":"et","description":"deserunt","file_id":12,"id":"sint","lang":16,"lang_hash":"accusamus","sort":14,"status":3,"title":"fugit","type":20,"updated_at":"omnis"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/admin/documents/1"
+);
+
+let params = {
+    "id": "officiis",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "created_at": "aspernatur",
+    "deleted_at": "et",
+    "description": "deserunt",
+    "file_id": 12,
+    "id": "sint",
+    "lang": 16,
+    "lang_hash": "accusamus",
+    "sort": 14,
+    "status": 3,
+    "title": "fugit",
+    "type": 20,
+    "updated_at": "omnis"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/v1/admin/documents/{id}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `id` |  required  | ID
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `created_at` | datetime |  optional  | no-required created_at
+        `deleted_at` | datetime |  optional  | no-required deleted_at
+        `description` | string |  optional  | no-required description
+        `file_id` | integer |  optional  | no-required file_id
+        `id` | bigint |  optional  | no-required id
+        `lang` | integer |  optional  | no-required lang
+        `lang_hash` | string |  optional  | no-required lang_hash
+        `sort` | integer |  optional  | no-required sort
+        `status` | integer |  optional  | no-required status
+        `title` | string |  optional  | no-required title
+        `type` | integer |  optional  | no-required type
+        `updated_at` | datetime |  optional  | no-required updated_at
+    
+<!-- END_0784bf0842f27599c9837f8bd13d6b50 -->
+
+<!-- START_c41f8a7b4188b305e328aaeab37fc2de -->
+## Document view
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://api.oksgroup.uz/api/v1/admin/documents/1?id=quisquam" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/admin/documents/1"
+);
+
+let params = {
+    "id": "quisquam",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "created_at": "datetime",
+    "deleted_at": "datetime",
+    "description": "string",
+    "file_id": "integer",
+    "id": "bigint",
+    "lang": "integer",
+    "lang_hash": "string",
+    "sort": "integer",
+    "status": "integer",
+    "title": "string",
+    "type": "integer",
+    "updated_at": "datetime",
+    "roles": [
+        "all"
+    ]
+}
+```
+
+### HTTP Request
+`GET api/v1/admin/documents/{id}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `id` |  required  | ID
+
+<!-- END_c41f8a7b4188b305e328aaeab37fc2de -->
+
+<!-- START_157aa135b2347b26366d46308f882481 -->
+## Document delete
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://api.oksgroup.uz/api/v1/admin/documents/1?id=dolor" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/admin/documents/1"
+);
+
+let params = {
+    "id": "dolor",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/v1/admin/documents/{id}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `id` |  required  | ID
+
+<!-- END_157aa135b2347b26366d46308f882481 -->
+
+<!-- START_f9f46754ae9a48ce4e10a68541a0704e -->
+## Document Get all
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://api.oksgroup.uz/api/v1/documents" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/documents"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "created_at": "datetime",
+    "deleted_at": "datetime",
+    "description": "string",
+    "file_id": "integer",
+    "id": "bigint",
+    "lang": "integer",
+    "lang_hash": "string",
+    "sort": "integer",
+    "status": "integer",
+    "title": "string",
+    "type": "integer",
+    "updated_at": "datetime",
+    "roles": [
+        "admin"
+    ]
+}
+```
+
+### HTTP Request
+`GET api/v1/documents`
+
+
+<!-- END_f9f46754ae9a48ce4e10a68541a0704e -->
+
+<!-- START_05fbb9368027b9755fb85930c94d1a97 -->
+## Document view
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://api.oksgroup.uz/api/v1/documents/1?id=non" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://api.oksgroup.uz/api/v1/documents/1"
+);
+
+let params = {
+    "id": "non",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "created_at": "datetime",
+    "deleted_at": "datetime",
+    "description": "string",
+    "file_id": "integer",
+    "id": "bigint",
+    "lang": "integer",
+    "lang_hash": "string",
+    "sort": "integer",
+    "status": "integer",
+    "title": "string",
+    "type": "integer",
+    "updated_at": "datetime",
+    "roles": [
+        "all"
+    ]
+}
+```
+
+### HTTP Request
+`GET api/v1/documents/{id}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `id` |  required  | ID
+
+<!-- END_05fbb9368027b9755fb85930c94d1a97 -->
 
 #Feedback
 
@@ -1496,7 +1491,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/feedback" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"ut","name":"et","phone":"quisquam","message":"qui","services":"minus","email":"non","files":"repellendus","type":4,"address":"error","status":11,"drink":16,"deleted_at":"autem","created_at":"necessitatibus","updated_at":"et"}'
+    -d '{"id":"libero","name":"incidunt","phone":"magnam","message":"dolore","services":"sit","email":"dolores","files":"autem","type":2,"address":"ut","status":10,"drink":18,"deleted_at":"cumque","created_at":"nisi","updated_at":"vel"}'
 
 ```
 
@@ -1511,20 +1506,20 @@ let headers = {
 };
 
 let body = {
-    "id": "ut",
-    "name": "et",
-    "phone": "quisquam",
-    "message": "qui",
-    "services": "minus",
-    "email": "non",
-    "files": "repellendus",
-    "type": 4,
-    "address": "error",
-    "status": 11,
-    "drink": 16,
-    "deleted_at": "autem",
-    "created_at": "necessitatibus",
-    "updated_at": "et"
+    "id": "libero",
+    "name": "incidunt",
+    "phone": "magnam",
+    "message": "dolore",
+    "services": "sit",
+    "email": "dolores",
+    "files": "autem",
+    "type": 2,
+    "address": "ut",
+    "status": 10,
+    "drink": 18,
+    "deleted_at": "cumque",
+    "created_at": "nisi",
+    "updated_at": "vel"
 }
 
 fetch(url, {
@@ -1568,10 +1563,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=ullam" \
+    "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=excepturi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"excepturi","name":"rerum","phone":"architecto","message":"voluptates","services":"voluptas","email":"consequatur","files":"quo","type":11,"address":"voluptas","status":4,"drink":15,"deleted_at":"laboriosam","created_at":"eligendi","updated_at":"assumenda"}'
+    -d '{"id":"earum","name":"labore","phone":"possimus","message":"laborum","services":"aut","email":"consequatur","files":"quis","type":16,"address":"voluptas","status":13,"drink":9,"deleted_at":"aut","created_at":"animi","updated_at":"atque"}'
 
 ```
 
@@ -1581,7 +1576,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "ullam",
+    "id": "excepturi",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1592,20 +1587,20 @@ let headers = {
 };
 
 let body = {
-    "id": "excepturi",
-    "name": "rerum",
-    "phone": "architecto",
-    "message": "voluptates",
-    "services": "voluptas",
+    "id": "earum",
+    "name": "labore",
+    "phone": "possimus",
+    "message": "laborum",
+    "services": "aut",
     "email": "consequatur",
-    "files": "quo",
-    "type": 11,
+    "files": "quis",
+    "type": 16,
     "address": "voluptas",
-    "status": 4,
-    "drink": 15,
-    "deleted_at": "laboriosam",
-    "created_at": "eligendi",
-    "updated_at": "assumenda"
+    "status": 13,
+    "drink": 9,
+    "deleted_at": "aut",
+    "created_at": "animi",
+    "updated_at": "atque"
 }
 
 fetch(url, {
@@ -1654,7 +1649,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=magni" \
+    -G "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=accusantium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1665,7 +1660,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "magni",
+    "id": "accusantium",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1726,7 +1721,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=enim" \
+    "http://api.oksgroup.uz/api/v1/admin/feedback/1?id=repellat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1737,7 +1732,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "enim",
+    "id": "repellat",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1836,10 +1831,10 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/feedback/1?id=ea" \
+    "http://api.oksgroup.uz/api/v1/feedback/1?id=recusandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"odit","name":"magnam","phone":"minima","message":"quia","services":"repudiandae","email":"commodi","files":"rerum","type":18,"address":"occaecati","status":4,"drink":10,"deleted_at":"nobis","created_at":"ut","updated_at":"atque"}'
+    -d '{"id":"est","name":"magnam","phone":"amet","message":"laborum","services":"est","email":"esse","files":"est","type":18,"address":"esse","status":16,"drink":3,"deleted_at":"tenetur","created_at":"dolores","updated_at":"laborum"}'
 
 ```
 
@@ -1849,7 +1844,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "ea",
+    "id": "recusandae",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1860,20 +1855,20 @@ let headers = {
 };
 
 let body = {
-    "id": "odit",
+    "id": "est",
     "name": "magnam",
-    "phone": "minima",
-    "message": "quia",
-    "services": "repudiandae",
-    "email": "commodi",
-    "files": "rerum",
+    "phone": "amet",
+    "message": "laborum",
+    "services": "est",
+    "email": "esse",
+    "files": "est",
     "type": 18,
-    "address": "occaecati",
-    "status": 4,
-    "drink": 10,
-    "deleted_at": "nobis",
-    "created_at": "ut",
-    "updated_at": "atque"
+    "address": "esse",
+    "status": 16,
+    "drink": 3,
+    "deleted_at": "tenetur",
+    "created_at": "dolores",
+    "updated_at": "laborum"
 }
 
 fetch(url, {
@@ -1922,7 +1917,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/feedback/1?id=impedit" \
+    -G "http://api.oksgroup.uz/api/v1/feedback/1?id=et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -1933,7 +1928,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "impedit",
+    "id": "et",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -1997,7 +1992,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/feedback" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"quod","name":"consequatur","phone":"dicta","message":"non","services":"enim","email":"ut","files":"quo","type":14,"address":"perspiciatis","status":19,"drink":19,"deleted_at":"dolores","created_at":"officiis","updated_at":"nihil"}'
+    -d '{"id":"et","name":"veniam","phone":"corrupti","message":"molestiae","services":"sed","email":"sed","files":"deleniti","type":13,"address":"dolore","status":16,"drink":9,"deleted_at":"ullam","created_at":"enim","updated_at":"vero"}'
 
 ```
 
@@ -2012,20 +2007,20 @@ let headers = {
 };
 
 let body = {
-    "id": "quod",
-    "name": "consequatur",
-    "phone": "dicta",
-    "message": "non",
-    "services": "enim",
-    "email": "ut",
-    "files": "quo",
-    "type": 14,
-    "address": "perspiciatis",
-    "status": 19,
-    "drink": 19,
-    "deleted_at": "dolores",
-    "created_at": "officiis",
-    "updated_at": "nihil"
+    "id": "et",
+    "name": "veniam",
+    "phone": "corrupti",
+    "message": "molestiae",
+    "services": "sed",
+    "email": "sed",
+    "files": "deleniti",
+    "type": 13,
+    "address": "dolore",
+    "status": 16,
+    "drink": 9,
+    "deleted_at": "ullam",
+    "created_at": "enim",
+    "updated_at": "vero"
 }
 
 fetch(url, {
@@ -2237,7 +2232,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/filemanager/uploads" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"files":"quod"}'
+    -d '{"files":"porro"}'
 
 ```
 
@@ -2252,7 +2247,7 @@ let headers = {
 };
 
 let body = {
-    "files": "quod"
+    "files": "porro"
 }
 
 fetch(url, {
@@ -2323,7 +2318,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/filemanager/uploads" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"files":"delectus"}'
+    -d '{"files":"dolores"}'
 
 ```
 
@@ -2338,7 +2333,7 @@ let headers = {
 };
 
 let body = {
-    "files": "delectus"
+    "files": "dolores"
 }
 
 fetch(url, {
@@ -2619,453 +2614,6 @@ fetch(url, {
 
 <!-- END_4ad6b371a68906a389cdf2c85ecd67be -->
 
-#History
-
-
-<!-- START_a757e1093fb8e552f12267308e156427 -->
-## History Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/history" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/history"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "id": "bigint",
-    "title": "string",
-    "description": "string",
-    "url": "string",
-    "file_id": "integer",
-    "lang": "integer",
-    "lang_hash": "string",
-    "status": "integer",
-    "created_at": "datetime",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/history`
-
-
-<!-- END_a757e1093fb8e552f12267308e156427 -->
-
-<!-- START_1e0c9c7289b9fb43002eba2ca10f9c34 -->
-## History create
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://api.oksgroup.uz/api/v1/admin/history" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"id":"perspiciatis","title":"nihil","description":"aut","url":"est","file_id":15,"lang":13,"lang_hash":"esse","status":11,"created_at":"unde","updated_at":"id"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/history"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "id": "perspiciatis",
-    "title": "nihil",
-    "description": "aut",
-    "url": "est",
-    "file_id": 15,
-    "lang": 13,
-    "lang_hash": "esse",
-    "status": 11,
-    "created_at": "unde",
-    "updated_at": "id"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/v1/admin/history`
-
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `id` | bigint |  optional  | no-required id
-        `title` | string |  optional  | no-required title
-        `description` | string |  optional  | no-required description
-        `url` | string |  optional  | no-required url
-        `file_id` | integer |  optional  | no-required file_id
-        `lang` | integer |  optional  | no-required lang
-        `lang_hash` | string |  optional  | no-required lang_hash
-        `status` | integer |  optional  | no-required status
-        `created_at` | datetime |  optional  | no-required created_at
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_1e0c9c7289b9fb43002eba2ca10f9c34 -->
-
-<!-- START_d02e758328af587930cddc15732c9769 -->
-## History update
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/history/1?id=soluta" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"id":"et","title":"ab","description":"non","url":"sapiente","file_id":8,"lang":19,"lang_hash":"labore","status":19,"created_at":"totam","updated_at":"veniam"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/history/1"
-);
-
-let params = {
-    "id": "soluta",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "id": "et",
-    "title": "ab",
-    "description": "non",
-    "url": "sapiente",
-    "file_id": 8,
-    "lang": 19,
-    "lang_hash": "labore",
-    "status": 19,
-    "created_at": "totam",
-    "updated_at": "veniam"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/v1/admin/history/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `id` | bigint |  optional  | no-required id
-        `title` | string |  optional  | no-required title
-        `description` | string |  optional  | no-required description
-        `url` | string |  optional  | no-required url
-        `file_id` | integer |  optional  | no-required file_id
-        `lang` | integer |  optional  | no-required lang
-        `lang_hash` | string |  optional  | no-required lang_hash
-        `status` | integer |  optional  | no-required status
-        `created_at` | datetime |  optional  | no-required created_at
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_d02e758328af587930cddc15732c9769 -->
-
-<!-- START_95752e3e5dcbfe0a0c22eb4815c35073 -->
-## History view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/history/1?id=placeat" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/history/1"
-);
-
-let params = {
-    "id": "placeat",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "id": "bigint",
-    "title": "string",
-    "description": "string",
-    "url": "string",
-    "file_id": "integer",
-    "lang": "integer",
-    "lang_hash": "string",
-    "status": "integer",
-    "created_at": "datetime",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/history/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_95752e3e5dcbfe0a0c22eb4815c35073 -->
-
-<!-- START_fbeef2a7d1fd519f902a775495fe0a24 -->
-## History delete
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/history/1?id=nam" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/history/1"
-);
-
-let params = {
-    "id": "nam",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE api/v1/admin/history/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_fbeef2a7d1fd519f902a775495fe0a24 -->
-
-<!-- START_8704c8694936f5b9adf70c1e3933570c -->
-## History Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/history" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/history"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "id": "bigint",
-    "title": "string",
-    "description": "string",
-    "url": "string",
-    "file_id": "integer",
-    "lang": "integer",
-    "lang_hash": "string",
-    "status": "integer",
-    "created_at": "datetime",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/history`
-
-
-<!-- END_8704c8694936f5b9adf70c1e3933570c -->
-
-<!-- START_487a8c2257ed640ee113caa4c3fa4ad7 -->
-## History view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/history/1?id=aliquam" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/history/1"
-);
-
-let params = {
-    "id": "aliquam",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "id": "bigint",
-    "title": "string",
-    "description": "string",
-    "url": "string",
-    "file_id": "integer",
-    "lang": "integer",
-    "lang_hash": "string",
-    "status": "integer",
-    "created_at": "datetime",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/history/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_487a8c2257ed640ee113caa4c3fa4ad7 -->
-
 #Menu
 
 
@@ -3136,7 +2684,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/menus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"sint","title":"in","alias":"eligendi","type":18,"lang":15,"lang_hash":"dolores","status":9,"deleted_at":"nesciunt","created_at":"in","updated_at":"dicta"}'
+    -d '{"id":"praesentium","title":"alias","alias":"voluptas","type":19,"lang":17,"lang_hash":"voluptatem","status":14,"deleted_at":"accusantium","created_at":"dolorem","updated_at":"laborum"}'
 
 ```
 
@@ -3151,16 +2699,16 @@ let headers = {
 };
 
 let body = {
-    "id": "sint",
-    "title": "in",
-    "alias": "eligendi",
-    "type": 18,
-    "lang": 15,
-    "lang_hash": "dolores",
-    "status": 9,
-    "deleted_at": "nesciunt",
-    "created_at": "in",
-    "updated_at": "dicta"
+    "id": "praesentium",
+    "title": "alias",
+    "alias": "voluptas",
+    "type": 19,
+    "lang": 17,
+    "lang_hash": "voluptatem",
+    "status": 14,
+    "deleted_at": "accusantium",
+    "created_at": "dolorem",
+    "updated_at": "laborum"
 }
 
 fetch(url, {
@@ -3200,10 +2748,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/menus/1?id=voluptates" \
+    "http://api.oksgroup.uz/api/v1/admin/menus/1?id=inventore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"ipsum","title":"quo","alias":"commodi","type":18,"lang":4,"lang_hash":"eum","status":2,"deleted_at":"odit","created_at":"deleniti","updated_at":"in"}'
+    -d '{"id":"doloremque","title":"explicabo","alias":"exercitationem","type":19,"lang":10,"lang_hash":"eius","status":1,"deleted_at":"porro","created_at":"atque","updated_at":"quas"}'
 
 ```
 
@@ -3213,7 +2761,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "voluptates",
+    "id": "inventore",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3224,16 +2772,16 @@ let headers = {
 };
 
 let body = {
-    "id": "ipsum",
-    "title": "quo",
-    "alias": "commodi",
-    "type": 18,
-    "lang": 4,
-    "lang_hash": "eum",
-    "status": 2,
-    "deleted_at": "odit",
-    "created_at": "deleniti",
-    "updated_at": "in"
+    "id": "doloremque",
+    "title": "explicabo",
+    "alias": "exercitationem",
+    "type": 19,
+    "lang": 10,
+    "lang_hash": "eius",
+    "status": 1,
+    "deleted_at": "porro",
+    "created_at": "atque",
+    "updated_at": "quas"
 }
 
 fetch(url, {
@@ -3278,7 +2826,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/menus/1?id=et" \
+    -G "http://api.oksgroup.uz/api/v1/admin/menus/1?id=ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3289,7 +2837,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "et",
+    "id": "ut",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3452,7 +3000,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/menus/1?id=ut" \
+    -G "http://api.oksgroup.uz/api/v1/menus/1?id=suscipit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3463,7 +3011,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "ut",
+    "id": "suscipit",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3703,7 +3251,7 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=vitae" \
+    "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3714,7 +3262,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "vitae",
+    "id": "eum",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3752,7 +3300,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=eveniet" \
+    -G "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3763,7 +3311,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "eveniet",
+    "id": "quidem",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3810,7 +3358,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=et" \
+    "http://api.oksgroup.uz/api/v1/admin/menu-items/1?id=est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3821,7 +3369,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "et",
+    "id": "est",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -3920,7 +3468,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/menu-items/1?id=consequatur" \
+    -G "http://api.oksgroup.uz/api/v1/menu-items/1?id=illo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -3931,7 +3479,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "consequatur",
+    "id": "illo",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4046,7 +3594,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/page" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"non","title":"quod","slug":"odio","description":"eligendi","type":4,"file_id":7,"documents":"inventore","anons":"et","content":"omnis","created_at":"distinctio","updated_at":"consequatur","lang":4,"lang_hash":"non","status":4,"deleted_at":"quaerat"}'
+    -d '{"id":"numquam","title":"veniam","slug":"dolor","description":"eos","type":11,"file_id":13,"documents":"alias","anons":"velit","content":"sunt","created_at":"eum","updated_at":"nihil","lang":3,"lang_hash":"ad","status":14,"deleted_at":"ipsam"}'
 
 ```
 
@@ -4061,21 +3609,21 @@ let headers = {
 };
 
 let body = {
-    "id": "non",
-    "title": "quod",
-    "slug": "odio",
-    "description": "eligendi",
-    "type": 4,
-    "file_id": 7,
-    "documents": "inventore",
-    "anons": "et",
-    "content": "omnis",
-    "created_at": "distinctio",
-    "updated_at": "consequatur",
-    "lang": 4,
-    "lang_hash": "non",
-    "status": 4,
-    "deleted_at": "quaerat"
+    "id": "numquam",
+    "title": "veniam",
+    "slug": "dolor",
+    "description": "eos",
+    "type": 11,
+    "file_id": 13,
+    "documents": "alias",
+    "anons": "velit",
+    "content": "sunt",
+    "created_at": "eum",
+    "updated_at": "nihil",
+    "lang": 3,
+    "lang_hash": "ad",
+    "status": 14,
+    "deleted_at": "ipsam"
 }
 
 fetch(url, {
@@ -4120,10 +3668,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/page/1?id=unde" \
+    "http://api.oksgroup.uz/api/v1/admin/page/1?id=dicta" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"distinctio","title":"sunt","slug":"eos","description":"culpa","type":1,"file_id":2,"documents":"nobis","anons":"omnis","content":"tempora","created_at":"et","updated_at":"laboriosam","lang":5,"lang_hash":"consectetur","status":18,"deleted_at":"facere"}'
+    -d '{"id":"sint","title":"dolor","slug":"ut","description":"fugit","type":12,"file_id":13,"documents":"id","anons":"rem","content":"sint","created_at":"qui","updated_at":"natus","lang":9,"lang_hash":"maxime","status":9,"deleted_at":"id"}'
 
 ```
 
@@ -4133,7 +3681,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "unde",
+    "id": "dicta",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4144,21 +3692,21 @@ let headers = {
 };
 
 let body = {
-    "id": "distinctio",
-    "title": "sunt",
-    "slug": "eos",
-    "description": "culpa",
-    "type": 1,
-    "file_id": 2,
-    "documents": "nobis",
-    "anons": "omnis",
-    "content": "tempora",
-    "created_at": "et",
-    "updated_at": "laboriosam",
-    "lang": 5,
-    "lang_hash": "consectetur",
-    "status": 18,
-    "deleted_at": "facere"
+    "id": "sint",
+    "title": "dolor",
+    "slug": "ut",
+    "description": "fugit",
+    "type": 12,
+    "file_id": 13,
+    "documents": "id",
+    "anons": "rem",
+    "content": "sint",
+    "created_at": "qui",
+    "updated_at": "natus",
+    "lang": 9,
+    "lang_hash": "maxime",
+    "status": 9,
+    "deleted_at": "id"
 }
 
 fetch(url, {
@@ -4208,7 +3756,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/page/1?id=cumque" \
+    -G "http://api.oksgroup.uz/api/v1/admin/page/1?id=vitae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4219,7 +3767,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "cumque",
+    "id": "vitae",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4281,7 +3829,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/page/1?id=numquam" \
+    "http://api.oksgroup.uz/api/v1/admin/page/1?id=eveniet" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4292,7 +3840,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "numquam",
+    "id": "eveniet",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4392,7 +3940,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/page/1?id=mollitia" \
+    -G "http://api.oksgroup.uz/api/v1/page/1?id=sed" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4403,7 +3951,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "mollitia",
+    "id": "sed",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4572,7 +4120,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/partner" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"vel","link":"nemo","sort":18,"lang":19,"lang_hash":"mollitia","status":3,"file_id":11,"deleted_at":"cupiditate","created_at":"voluptatem","updated_at":"beatae"}'
+    -d '{"id":"error","link":"perferendis","sort":9,"lang":2,"lang_hash":"cumque","status":18,"file_id":20,"deleted_at":"sed","created_at":"porro","updated_at":"aut"}'
 
 ```
 
@@ -4587,16 +4135,16 @@ let headers = {
 };
 
 let body = {
-    "id": "vel",
-    "link": "nemo",
-    "sort": 18,
-    "lang": 19,
-    "lang_hash": "mollitia",
-    "status": 3,
-    "file_id": 11,
-    "deleted_at": "cupiditate",
-    "created_at": "voluptatem",
-    "updated_at": "beatae"
+    "id": "error",
+    "link": "perferendis",
+    "sort": 9,
+    "lang": 2,
+    "lang_hash": "cumque",
+    "status": 18,
+    "file_id": 20,
+    "deleted_at": "sed",
+    "created_at": "porro",
+    "updated_at": "aut"
 }
 
 fetch(url, {
@@ -4636,10 +4184,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/partner/1?id=provident" \
+    "http://api.oksgroup.uz/api/v1/admin/partner/1?id=atque" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"debitis","link":"molestiae","sort":15,"lang":17,"lang_hash":"quia","status":2,"file_id":6,"deleted_at":"et","created_at":"similique","updated_at":"saepe"}'
+    -d '{"id":"officiis","link":"quia","sort":5,"lang":19,"lang_hash":"animi","status":19,"file_id":19,"deleted_at":"non","created_at":"blanditiis","updated_at":"optio"}'
 
 ```
 
@@ -4649,7 +4197,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "provident",
+    "id": "atque",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4660,16 +4208,16 @@ let headers = {
 };
 
 let body = {
-    "id": "debitis",
-    "link": "molestiae",
-    "sort": 15,
-    "lang": 17,
-    "lang_hash": "quia",
-    "status": 2,
-    "file_id": 6,
-    "deleted_at": "et",
-    "created_at": "similique",
-    "updated_at": "saepe"
+    "id": "officiis",
+    "link": "quia",
+    "sort": 5,
+    "lang": 19,
+    "lang_hash": "animi",
+    "status": 19,
+    "file_id": 19,
+    "deleted_at": "non",
+    "created_at": "blanditiis",
+    "updated_at": "optio"
 }
 
 fetch(url, {
@@ -4714,7 +4262,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/partner/1?id=repellendus" \
+    -G "http://api.oksgroup.uz/api/v1/admin/partner/1?id=quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4725,7 +4273,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "repellendus",
+    "id": "quidem",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4782,7 +4330,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/partner/1?id=iusto" \
+    "http://api.oksgroup.uz/api/v1/admin/partner/1?id=dignissimos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4793,7 +4341,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "iusto",
+    "id": "dignissimos",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -4888,7 +4436,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/partner/1?id=accusantium" \
+    -G "http://api.oksgroup.uz/api/v1/partner/1?id=illum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -4899,7 +4447,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "accusantium",
+    "id": "illum",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5028,7 +4576,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"officia","title":"veritatis","description":"eos","content":"cum","slug":"voluptatibus","top":12,"popular":10,"type":5,"file_id":16,"documents":"quod","video":"aliquid","photo_author":"autem","published_at":"voluptatum","created_at":"dolore","updated_at":"quos","lang":10,"lang_hash":"quibusdam","status":19,"deleted_at":"neque"}'
+    -d '{"id":"sapiente","title":"sint","description":"ut","content":"modi","slug":"et","top":2,"popular":9,"type":17,"file_id":12,"documents":"quidem","video":"adipisci","photo_author":"eligendi","published_at":"numquam","created_at":"rerum","updated_at":"qui","lang":6,"lang_hash":"ut","status":15,"deleted_at":"eum"}'
 
 ```
 
@@ -5043,25 +4591,25 @@ let headers = {
 };
 
 let body = {
-    "id": "officia",
-    "title": "veritatis",
-    "description": "eos",
-    "content": "cum",
-    "slug": "voluptatibus",
-    "top": 12,
-    "popular": 10,
-    "type": 5,
-    "file_id": 16,
-    "documents": "quod",
-    "video": "aliquid",
-    "photo_author": "autem",
-    "published_at": "voluptatum",
-    "created_at": "dolore",
-    "updated_at": "quos",
-    "lang": 10,
-    "lang_hash": "quibusdam",
-    "status": 19,
-    "deleted_at": "neque"
+    "id": "sapiente",
+    "title": "sint",
+    "description": "ut",
+    "content": "modi",
+    "slug": "et",
+    "top": 2,
+    "popular": 9,
+    "type": 17,
+    "file_id": 12,
+    "documents": "quidem",
+    "video": "adipisci",
+    "photo_author": "eligendi",
+    "published_at": "numquam",
+    "created_at": "rerum",
+    "updated_at": "qui",
+    "lang": 6,
+    "lang_hash": "ut",
+    "status": 15,
+    "deleted_at": "eum"
 }
 
 fetch(url, {
@@ -5110,10 +4658,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/post/1?id=voluptatem" \
+    "http://api.oksgroup.uz/api/v1/admin/post/1?id=nesciunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"minus","title":"beatae","description":"voluptatem","content":"alias","slug":"commodi","top":5,"popular":6,"type":3,"file_id":18,"documents":"aut","video":"veritatis","photo_author":"quaerat","published_at":"quibusdam","created_at":"sit","updated_at":"neque","lang":18,"lang_hash":"dolores","status":4,"deleted_at":"saepe"}'
+    -d '{"id":"similique","title":"in","description":"voluptatem","content":"libero","slug":"est","top":20,"popular":16,"type":8,"file_id":14,"documents":"quia","video":"ipsa","photo_author":"rerum","published_at":"atque","created_at":"eveniet","updated_at":"saepe","lang":12,"lang_hash":"enim","status":4,"deleted_at":"voluptatem"}'
 
 ```
 
@@ -5123,7 +4671,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "voluptatem",
+    "id": "nesciunt",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5134,25 +4682,25 @@ let headers = {
 };
 
 let body = {
-    "id": "minus",
-    "title": "beatae",
+    "id": "similique",
+    "title": "in",
     "description": "voluptatem",
-    "content": "alias",
-    "slug": "commodi",
-    "top": 5,
-    "popular": 6,
-    "type": 3,
-    "file_id": 18,
-    "documents": "aut",
-    "video": "veritatis",
-    "photo_author": "quaerat",
-    "published_at": "quibusdam",
-    "created_at": "sit",
-    "updated_at": "neque",
-    "lang": 18,
-    "lang_hash": "dolores",
+    "content": "libero",
+    "slug": "est",
+    "top": 20,
+    "popular": 16,
+    "type": 8,
+    "file_id": 14,
+    "documents": "quia",
+    "video": "ipsa",
+    "photo_author": "rerum",
+    "published_at": "atque",
+    "created_at": "eveniet",
+    "updated_at": "saepe",
+    "lang": 12,
+    "lang_hash": "enim",
     "status": 4,
-    "deleted_at": "saepe"
+    "deleted_at": "voluptatem"
 }
 
 fetch(url, {
@@ -5206,7 +4754,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/post/1?id=itaque" \
+    -G "http://api.oksgroup.uz/api/v1/admin/post/1?id=minima" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5217,7 +4765,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "itaque",
+    "id": "minima",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5283,7 +4831,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/post/1?id=cupiditate" \
+    "http://api.oksgroup.uz/api/v1/admin/post/1?id=similique" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5294,7 +4842,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "cupiditate",
+    "id": "similique",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5398,7 +4946,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/post/1?id=incidunt" \
+    -G "http://api.oksgroup.uz/api/v1/post/1?id=voluptates" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5409,7 +4957,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "incidunt",
+    "id": "voluptates",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5589,7 +5137,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/settings" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"rem","name":"inventore","value":"aut","file_id":20,"slug":"est","link":"laborum","alias":"doloribus","lang_hash":"sit","sort":13,"lang":15,"status":17,"deleted_at":"quo","created_at":"culpa","updated_at":"nobis"}'
+    -d '{"id":"dolore","name":"aut","value":"nihil","file_id":19,"slug":"sint","link":"quaerat","alias":"id","lang_hash":"rerum","sort":1,"lang":4,"status":1,"deleted_at":"sit","created_at":"corporis","updated_at":"facilis"}'
 
 ```
 
@@ -5604,20 +5152,20 @@ let headers = {
 };
 
 let body = {
-    "id": "rem",
-    "name": "inventore",
-    "value": "aut",
-    "file_id": 20,
-    "slug": "est",
-    "link": "laborum",
-    "alias": "doloribus",
-    "lang_hash": "sit",
-    "sort": 13,
-    "lang": 15,
-    "status": 17,
-    "deleted_at": "quo",
-    "created_at": "culpa",
-    "updated_at": "nobis"
+    "id": "dolore",
+    "name": "aut",
+    "value": "nihil",
+    "file_id": 19,
+    "slug": "sint",
+    "link": "quaerat",
+    "alias": "id",
+    "lang_hash": "rerum",
+    "sort": 1,
+    "lang": 4,
+    "status": 1,
+    "deleted_at": "sit",
+    "created_at": "corporis",
+    "updated_at": "facilis"
 }
 
 fetch(url, {
@@ -5661,10 +5209,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/settings/1?id=molestiae" \
+    "http://api.oksgroup.uz/api/v1/admin/settings/1?id=nobis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"commodi","name":"dolorem","value":"velit","file_id":3,"slug":"architecto","link":"nihil","alias":"quidem","lang_hash":"dignissimos","sort":2,"lang":5,"status":1,"deleted_at":"ipsum","created_at":"debitis","updated_at":"quae"}'
+    -d '{"id":"nesciunt","name":"dicta","value":"earum","file_id":20,"slug":"molestias","link":"veritatis","alias":"dolor","lang_hash":"maiores","sort":6,"lang":19,"status":6,"deleted_at":"quo","created_at":"consequatur","updated_at":"nemo"}'
 
 ```
 
@@ -5674,7 +5222,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "molestiae",
+    "id": "nobis",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5685,20 +5233,20 @@ let headers = {
 };
 
 let body = {
-    "id": "commodi",
-    "name": "dolorem",
-    "value": "velit",
-    "file_id": 3,
-    "slug": "architecto",
-    "link": "nihil",
-    "alias": "quidem",
-    "lang_hash": "dignissimos",
-    "sort": 2,
-    "lang": 5,
-    "status": 1,
-    "deleted_at": "ipsum",
-    "created_at": "debitis",
-    "updated_at": "quae"
+    "id": "nesciunt",
+    "name": "dicta",
+    "value": "earum",
+    "file_id": 20,
+    "slug": "molestias",
+    "link": "veritatis",
+    "alias": "dolor",
+    "lang_hash": "maiores",
+    "sort": 6,
+    "lang": 19,
+    "status": 6,
+    "deleted_at": "quo",
+    "created_at": "consequatur",
+    "updated_at": "nemo"
 }
 
 fetch(url, {
@@ -5747,7 +5295,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/settings/1?id=quidem" \
+    -G "http://api.oksgroup.uz/api/v1/admin/settings/1?id=quo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5758,7 +5306,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "quidem",
+    "id": "quo",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5819,7 +5367,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/settings/1?id=voluptatem" \
+    "http://api.oksgroup.uz/api/v1/admin/settings/1?id=omnis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5830,7 +5378,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "voluptatem",
+    "id": "omnis",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -5932,7 +5480,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/settings/1?id=sint" \
+    -G "http://api.oksgroup.uz/api/v1/settings/1?id=incidunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -5943,7 +5491,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "sint",
+    "id": "incidunt",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -6079,15 +5627,16 @@ fetch(url, {
 
 ```json
 {
+    "created_at": "datetime",
+    "eur": "integer",
     "id": "bigint",
-    "title": "string",
-    "alias": "string",
-    "status": "integer",
-    "type": "integer",
     "lang": "integer",
     "lang_hash": "string",
-    "created_at": "datetime",
+    "rub": "integer",
+    "type": "integer",
     "updated_at": "datetime",
+    "uran": "integer",
+    "usd": "integer",
     "roles": [
         "admin"
     ]
@@ -6110,7 +5659,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/statistics" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"asperiores","title":"dolor","alias":"ea","status":15,"type":7,"lang":10,"lang_hash":"reiciendis","created_at":"aliquam","updated_at":"a"}'
+    -d '{"created_at":"aliquam","eur":8,"id":"sit","lang":4,"lang_hash":"alias","rub":5,"type":4,"updated_at":"enim","uran":15,"usd":16}'
 
 ```
 
@@ -6125,15 +5674,16 @@ let headers = {
 };
 
 let body = {
-    "id": "asperiores",
-    "title": "dolor",
-    "alias": "ea",
-    "status": 15,
-    "type": 7,
-    "lang": 10,
-    "lang_hash": "reiciendis",
     "created_at": "aliquam",
-    "updated_at": "a"
+    "eur": 8,
+    "id": "sit",
+    "lang": 4,
+    "lang_hash": "alias",
+    "rub": 5,
+    "type": 4,
+    "updated_at": "enim",
+    "uran": 15,
+    "usd": 16
 }
 
 fetch(url, {
@@ -6153,15 +5703,16 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `id` | bigint |  optional  | no-required id
-        `title` | string |  optional  | no-required title
-        `alias` | string |  optional  | no-required alias
-        `status` | integer |  optional  | no-required status
-        `type` | integer |  optional  | no-required type
+    `created_at` | datetime |  optional  | no-required created_at
+        `eur` | integer |  optional  | no-required eur
+        `id` | bigint |  optional  | no-required id
         `lang` | integer |  optional  | no-required lang
         `lang_hash` | string |  optional  | no-required lang_hash
-        `created_at` | datetime |  optional  | no-required created_at
+        `rub` | integer |  optional  | no-required rub
+        `type` | integer |  optional  | no-required type
         `updated_at` | datetime |  optional  | no-required updated_at
+        `uran` | integer |  optional  | no-required uran
+        `usd` | integer |  optional  | no-required usd
     
 <!-- END_9094552e6d9d9a4dfa922e637a2cd1af -->
 
@@ -6172,10 +5723,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=dolores" \
+    "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":"amet","title":"consequatur","alias":"quo","status":13,"type":3,"lang":18,"lang_hash":"et","created_at":"dolorem","updated_at":"ut"}'
+    -d '{"created_at":"tempore","eur":2,"id":"cum","lang":14,"lang_hash":"facilis","rub":4,"type":17,"updated_at":"nemo","uran":14,"usd":7}'
 
 ```
 
@@ -6185,7 +5736,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "dolores",
+    "id": "aut",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -6196,15 +5747,16 @@ let headers = {
 };
 
 let body = {
-    "id": "amet",
-    "title": "consequatur",
-    "alias": "quo",
-    "status": 13,
-    "type": 3,
-    "lang": 18,
-    "lang_hash": "et",
-    "created_at": "dolorem",
-    "updated_at": "ut"
+    "created_at": "tempore",
+    "eur": 2,
+    "id": "cum",
+    "lang": 14,
+    "lang_hash": "facilis",
+    "rub": 4,
+    "type": 17,
+    "updated_at": "nemo",
+    "uran": 14,
+    "usd": 7
 }
 
 fetch(url, {
@@ -6229,15 +5781,16 @@ Parameter | Status | Description
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `id` | bigint |  optional  | no-required id
-        `title` | string |  optional  | no-required title
-        `alias` | string |  optional  | no-required alias
-        `status` | integer |  optional  | no-required status
-        `type` | integer |  optional  | no-required type
+    `created_at` | datetime |  optional  | no-required created_at
+        `eur` | integer |  optional  | no-required eur
+        `id` | bigint |  optional  | no-required id
         `lang` | integer |  optional  | no-required lang
         `lang_hash` | string |  optional  | no-required lang_hash
-        `created_at` | datetime |  optional  | no-required created_at
+        `rub` | integer |  optional  | no-required rub
+        `type` | integer |  optional  | no-required type
         `updated_at` | datetime |  optional  | no-required updated_at
+        `uran` | integer |  optional  | no-required uran
+        `usd` | integer |  optional  | no-required usd
     
 <!-- END_06cae353f723060e3c426dbcfe5ad2e3 -->
 
@@ -6248,7 +5801,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=occaecati" \
+    -G "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=enim" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -6259,7 +5812,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "occaecati",
+    "id": "enim",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -6282,15 +5835,16 @@ fetch(url, {
 
 ```json
 {
+    "created_at": "datetime",
+    "eur": "integer",
     "id": "bigint",
-    "title": "string",
-    "alias": "string",
-    "status": "integer",
-    "type": "integer",
     "lang": "integer",
     "lang_hash": "string",
-    "created_at": "datetime",
+    "rub": "integer",
+    "type": "integer",
     "updated_at": "datetime",
+    "uran": "integer",
+    "usd": "integer",
     "roles": [
         "all"
     ]
@@ -6315,7 +5869,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=provident" \
+    "http://api.oksgroup.uz/api/v1/admin/statistics/1?id=incidunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -6326,7 +5880,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "provident",
+    "id": "incidunt",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -6392,15 +5946,16 @@ fetch(url, {
 
 ```json
 {
+    "created_at": "datetime",
+    "eur": "integer",
     "id": "bigint",
-    "title": "string",
-    "alias": "string",
-    "status": "integer",
-    "type": "integer",
     "lang": "integer",
     "lang_hash": "string",
-    "created_at": "datetime",
+    "rub": "integer",
+    "type": "integer",
     "updated_at": "datetime",
+    "uran": "integer",
+    "usd": "integer",
     "roles": [
         "admin"
     ]
@@ -6420,7 +5975,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/statistics/1?id=provident" \
+    -G "http://api.oksgroup.uz/api/v1/statistics/1?id=non" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -6431,7 +5986,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "provident",
+    "id": "non",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -6454,15 +6009,16 @@ fetch(url, {
 
 ```json
 {
+    "created_at": "datetime",
+    "eur": "integer",
     "id": "bigint",
-    "title": "string",
-    "alias": "string",
-    "status": "integer",
-    "type": "integer",
     "lang": "integer",
     "lang_hash": "string",
-    "created_at": "datetime",
+    "rub": "integer",
+    "type": "integer",
     "updated_at": "datetime",
+    "uran": "integer",
+    "usd": "integer",
     "roles": [
         "all"
     ]
@@ -6482,458 +6038,6 @@ Parameter | Status | Description
 
 #StatisticItem
 
-
-<!-- START_2f219d501cf06e6090d885515a413a94 -->
-## StatisticItem Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/statisticitem" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "parent_id": "integer",
-    "secondary": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/statisticitem`
-
-
-<!-- END_2f219d501cf06e6090d885515a413a94 -->
-
-<!-- START_f5b375b37a1913769b9cbfab1cc9e514 -->
-## StatisticItem create
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"created_at":"ullam","deleted_at":"corporis","description":"nihil","file_id":13,"id":"at","parent_id":19,"secondary":"eveniet","sort":13,"status":2,"title":"inventore","updated_at":"iusto"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "created_at": "ullam",
-    "deleted_at": "corporis",
-    "description": "nihil",
-    "file_id": 13,
-    "id": "at",
-    "parent_id": 19,
-    "secondary": "eveniet",
-    "sort": 13,
-    "status": 2,
-    "title": "inventore",
-    "updated_at": "iusto"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/v1/admin/statisticitem`
-
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
-        `deleted_at` | datetime |  optional  | no-required deleted_at
-        `description` | string |  optional  | no-required description
-        `file_id` | integer |  optional  | no-required file_id
-        `id` | bigint |  optional  | no-required id
-        `parent_id` | integer |  optional  | no-required parent_id
-        `secondary` | string |  optional  | no-required secondary
-        `sort` | integer |  optional  | no-required sort
-        `status` | integer |  optional  | no-required status
-        `title` | string |  optional  | no-required title
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_f5b375b37a1913769b9cbfab1cc9e514 -->
-
-<!-- START_9c1750d1bd14b30e464ae607e3d5edb9 -->
-## StatisticItem update
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem/1?id=assumenda" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"created_at":"quae","deleted_at":"aliquid","description":"consequatur","file_id":19,"id":"saepe","parent_id":14,"secondary":"nihil","sort":3,"status":16,"title":"sed","updated_at":"aut"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem/1"
-);
-
-let params = {
-    "id": "assumenda",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "created_at": "quae",
-    "deleted_at": "aliquid",
-    "description": "consequatur",
-    "file_id": 19,
-    "id": "saepe",
-    "parent_id": 14,
-    "secondary": "nihil",
-    "sort": 3,
-    "status": 16,
-    "title": "sed",
-    "updated_at": "aut"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/v1/admin/statisticitem/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
-        `deleted_at` | datetime |  optional  | no-required deleted_at
-        `description` | string |  optional  | no-required description
-        `file_id` | integer |  optional  | no-required file_id
-        `id` | bigint |  optional  | no-required id
-        `parent_id` | integer |  optional  | no-required parent_id
-        `secondary` | string |  optional  | no-required secondary
-        `sort` | integer |  optional  | no-required sort
-        `status` | integer |  optional  | no-required status
-        `title` | string |  optional  | no-required title
-        `updated_at` | datetime |  optional  | no-required updated_at
-    
-<!-- END_9c1750d1bd14b30e464ae607e3d5edb9 -->
-
-<!-- START_6752255667e7dcd36febb41189265583 -->
-## StatisticItem view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/statisticitem/1?id=officia" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem/1"
-);
-
-let params = {
-    "id": "officia",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "parent_id": "integer",
-    "secondary": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/admin/statisticitem/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_6752255667e7dcd36febb41189265583 -->
-
-<!-- START_0b1d2a44d90fd7ebfe6661b7440b7d51 -->
-## StatisticItem delete
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem/1?id=consequatur" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/admin/statisticitem/1"
-);
-
-let params = {
-    "id": "consequatur",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE api/v1/admin/statisticitem/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_0b1d2a44d90fd7ebfe6661b7440b7d51 -->
-
-<!-- START_d621cb64778b1c04a8c91ee69250a4d7 -->
-## StatisticItem Get all
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/statisticitem" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/statisticitem"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "parent_id": "integer",
-    "secondary": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "updated_at": "datetime",
-    "roles": [
-        "admin"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/statisticitem`
-
-
-<!-- END_d621cb64778b1c04a8c91ee69250a4d7 -->
-
-<!-- START_6213688004509c8707ab9ed1bd9acb55 -->
-## StatisticItem view
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/statisticitem/1?id=id" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://api.oksgroup.uz/api/v1/statisticitem/1"
-);
-
-let params = {
-    "id": "id",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "created_at": "datetime",
-    "deleted_at": "datetime",
-    "description": "string",
-    "file_id": "integer",
-    "id": "bigint",
-    "parent_id": "integer",
-    "secondary": "string",
-    "sort": "integer",
-    "status": "integer",
-    "title": "string",
-    "updated_at": "datetime",
-    "roles": [
-        "all"
-    ]
-}
-```
-
-### HTTP Request
-`GET api/v1/statisticitem/{id}`
-
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `id` |  required  | ID
-
-<!-- END_6213688004509c8707ab9ed1bd9acb55 -->
 
 <!-- START_017b6f309f37cc73c483becd09697ec5 -->
 ## StatisticItem Get all
@@ -6970,11 +6074,14 @@ fetch(url, {
 
 ```json
 {
+    "comparedyear": "string",
     "created_at": "datetime",
+    "data": "integer",
     "deleted_at": "datetime",
     "description": "string",
     "file_id": "integer",
     "id": "bigint",
+    "olddata": "integer",
     "parent_id": "integer",
     "secondary": "string",
     "sort": "integer",
@@ -7003,7 +6110,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/statistic-item" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"created_at":"pariatur","deleted_at":"et","description":"unde","file_id":4,"id":"voluptatem","parent_id":4,"secondary":"laboriosam","sort":20,"status":16,"title":"et","updated_at":"voluptatum"}'
+    -d '{"comparedyear":"et","created_at":"debitis","data":8,"deleted_at":"repudiandae","description":"dolore","file_id":16,"id":"ea","olddata":15,"parent_id":5,"secondary":"officiis","sort":13,"status":9,"title":"voluptatem","updated_at":"et"}'
 
 ```
 
@@ -7018,17 +6125,20 @@ let headers = {
 };
 
 let body = {
-    "created_at": "pariatur",
-    "deleted_at": "et",
-    "description": "unde",
-    "file_id": 4,
-    "id": "voluptatem",
-    "parent_id": 4,
-    "secondary": "laboriosam",
-    "sort": 20,
-    "status": 16,
-    "title": "et",
-    "updated_at": "voluptatum"
+    "comparedyear": "et",
+    "created_at": "debitis",
+    "data": 8,
+    "deleted_at": "repudiandae",
+    "description": "dolore",
+    "file_id": 16,
+    "id": "ea",
+    "olddata": 15,
+    "parent_id": 5,
+    "secondary": "officiis",
+    "sort": 13,
+    "status": 9,
+    "title": "voluptatem",
+    "updated_at": "et"
 }
 
 fetch(url, {
@@ -7048,11 +6158,14 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
+    `comparedyear` | string |  optional  | no-required comparedyear
+        `created_at` | datetime |  optional  | no-required created_at
+        `data` | integer |  optional  | no-required data
         `deleted_at` | datetime |  optional  | no-required deleted_at
         `description` | string |  optional  | no-required description
         `file_id` | integer |  optional  | no-required file_id
         `id` | bigint |  optional  | no-required id
+        `olddata` | integer |  optional  | no-required olddata
         `parent_id` | integer |  optional  | no-required parent_id
         `secondary` | string |  optional  | no-required secondary
         `sort` | integer |  optional  | no-required sort
@@ -7069,10 +6182,10 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X PUT \
-    "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=aut" \
+    "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=in" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"created_at":"et","deleted_at":"voluptatem","description":"officia","file_id":8,"id":"et","parent_id":6,"secondary":"qui","sort":6,"status":14,"title":"saepe","updated_at":"asperiores"}'
+    -d '{"comparedyear":"maiores","created_at":"atque","data":16,"deleted_at":"modi","description":"non","file_id":11,"id":"sit","olddata":17,"parent_id":19,"secondary":"et","sort":4,"status":13,"title":"perferendis","updated_at":"corporis"}'
 
 ```
 
@@ -7082,7 +6195,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "aut",
+    "id": "in",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -7093,17 +6206,20 @@ let headers = {
 };
 
 let body = {
-    "created_at": "et",
-    "deleted_at": "voluptatem",
-    "description": "officia",
-    "file_id": 8,
-    "id": "et",
-    "parent_id": 6,
-    "secondary": "qui",
-    "sort": 6,
-    "status": 14,
-    "title": "saepe",
-    "updated_at": "asperiores"
+    "comparedyear": "maiores",
+    "created_at": "atque",
+    "data": 16,
+    "deleted_at": "modi",
+    "description": "non",
+    "file_id": 11,
+    "id": "sit",
+    "olddata": 17,
+    "parent_id": 19,
+    "secondary": "et",
+    "sort": 4,
+    "status": 13,
+    "title": "perferendis",
+    "updated_at": "corporis"
 }
 
 fetch(url, {
@@ -7128,11 +6244,14 @@ Parameter | Status | Description
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `created_at` | datetime |  optional  | no-required created_at
+    `comparedyear` | string |  optional  | no-required comparedyear
+        `created_at` | datetime |  optional  | no-required created_at
+        `data` | integer |  optional  | no-required data
         `deleted_at` | datetime |  optional  | no-required deleted_at
         `description` | string |  optional  | no-required description
         `file_id` | integer |  optional  | no-required file_id
         `id` | bigint |  optional  | no-required id
+        `olddata` | integer |  optional  | no-required olddata
         `parent_id` | integer |  optional  | no-required parent_id
         `secondary` | string |  optional  | no-required secondary
         `sort` | integer |  optional  | no-required sort
@@ -7149,7 +6268,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=nulla" \
+    -G "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=sit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -7160,7 +6279,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "nulla",
+    "id": "sit",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -7183,11 +6302,14 @@ fetch(url, {
 
 ```json
 {
+    "comparedyear": "string",
     "created_at": "datetime",
+    "data": "integer",
     "deleted_at": "datetime",
     "description": "string",
     "file_id": "integer",
     "id": "bigint",
+    "olddata": "integer",
     "parent_id": "integer",
     "secondary": "string",
     "sort": "integer",
@@ -7218,7 +6340,7 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=placeat" \
+    "http://api.oksgroup.uz/api/v1/admin/statistic-item/1?id=quos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -7229,7 +6351,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "placeat",
+    "id": "quos",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -7295,11 +6417,14 @@ fetch(url, {
 
 ```json
 {
+    "comparedyear": "string",
     "created_at": "datetime",
+    "data": "integer",
     "deleted_at": "datetime",
     "description": "string",
     "file_id": "integer",
     "id": "bigint",
+    "olddata": "integer",
     "parent_id": "integer",
     "secondary": "string",
     "sort": "integer",
@@ -7325,7 +6450,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/statistic-item/1?id=enim" \
+    -G "http://api.oksgroup.uz/api/v1/statistic-item/1?id=aliquam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -7336,7 +6461,7 @@ const url = new URL(
 );
 
 let params = {
-    "id": "enim",
+    "id": "aliquam",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -7359,11 +6484,14 @@ fetch(url, {
 
 ```json
 {
+    "comparedyear": "string",
     "created_at": "datetime",
+    "data": "integer",
     "deleted_at": "datetime",
     "description": "string",
     "file_id": "integer",
     "id": "bigint",
+    "olddata": "integer",
     "parent_id": "integer",
     "secondary": "string",
     "sort": "integer",
@@ -7400,7 +6528,7 @@ curl -X POST \
     "http://api.oksgroup.uz/api/v1/admin/user/sign-in" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"accusamus","password":"id"}'
+    -d '{"name":"corporis","password":"similique"}'
 
 ```
 
@@ -7415,8 +6543,8 @@ let headers = {
 };
 
 let body = {
-    "name": "accusamus",
-    "password": "id"
+    "name": "corporis",
+    "password": "similique"
 }
 
 fetch(url, {
@@ -7492,7 +6620,7 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://api.oksgroup.uz/api/v1/admin/user/get-me?token=eaque" \
+    -G "http://api.oksgroup.uz/api/v1/admin/user/get-me?token=consequuntur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -7503,7 +6631,7 @@ const url = new URL(
 );
 
 let params = {
-    "token": "eaque",
+    "token": "consequuntur",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));

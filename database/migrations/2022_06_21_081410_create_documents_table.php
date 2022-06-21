@@ -3,8 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
-class CreateHistoryTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +12,17 @@ class CreateHistoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('history', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string("title");
             $table->string("description")->nullable();
-            $table->string('url');
             $table->integer("file_id")->nullable();
+            $table->integer("type")->nullable();
             $table->integer('lang')->nullable();
             $table->string('lang_hash')->nullable();
+            $table->integer("sort")->nullable();
             $table->integer("status")->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateHistoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history');
+        Schema::dropIfExists('documents');
     }
 }

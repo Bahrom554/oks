@@ -15,9 +15,10 @@ class CreateStatisticsTable extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('alias')->nullable();
-            $table->integer('status')->default(1);
+            $table->integer('usd')->nullable();
+            $table->integer('eur')->nullable();
+            $table->integer('rub')->nullable();
+            $table->integer('uran')->nullable();
             $table->integer('type')->nullable();
             $table->integer('lang')->nullable();
             $table->string('lang_hash')->nullable();

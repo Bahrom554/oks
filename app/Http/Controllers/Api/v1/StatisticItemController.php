@@ -20,11 +20,14 @@ class StatisticItemController extends ApiController
     * StatisticItem Get all
     *
     * @response {
-    *  "created_at": "datetime",
+    *  "comparedyear": "string",
+*  "created_at": "datetime",
+*  "data": "integer",
 *  "deleted_at": "datetime",
 *  "description": "string",
 *  "file_id": "integer",
 *  "id": "bigint",
+*  "olddata": "integer",
 *  "parent_id": "integer",
 *  "secondary": "string",
 *  "sort": "integer",
@@ -60,11 +63,14 @@ class StatisticItemController extends ApiController
     * @queryParam id required ID
     * @var $id
     * @response {
-    *  "created_at": "datetime",
+    *  "comparedyear": "string",
+*  "created_at": "datetime",
+*  "data": "integer",
 *  "deleted_at": "datetime",
 *  "description": "string",
 *  "file_id": "integer",
 *  "id": "bigint",
+*  "olddata": "integer",
 *  "parent_id": "integer",
 *  "secondary": "string",
 *  "sort": "integer",
@@ -92,11 +98,14 @@ class StatisticItemController extends ApiController
     /**
      * StatisticItem create
      *
-     * @bodyParam created_at datetime no-required created_at
+     * @bodyParam comparedyear string no-required comparedyear
+* @bodyParam created_at datetime no-required created_at
+* @bodyParam data integer no-required data
 * @bodyParam deleted_at datetime no-required deleted_at
 * @bodyParam description string no-required description
 * @bodyParam file_id integer no-required file_id
 * @bodyParam id bigint no-required id
+* @bodyParam olddata integer no-required olddata
 * @bodyParam parent_id integer no-required parent_id
 * @bodyParam secondary string no-required secondary
 * @bodyParam sort integer no-required sort
@@ -126,11 +135,14 @@ class StatisticItemController extends ApiController
      * StatisticItem update
      *
      * @queryParam id required ID
-     * @bodyParam created_at datetime no-required created_at
+     * @bodyParam comparedyear string no-required comparedyear
+* @bodyParam created_at datetime no-required created_at
+* @bodyParam data integer no-required data
 * @bodyParam deleted_at datetime no-required deleted_at
 * @bodyParam description string no-required description
 * @bodyParam file_id integer no-required file_id
 * @bodyParam id bigint no-required id
+* @bodyParam olddata integer no-required olddata
 * @bodyParam parent_id integer no-required parent_id
 * @bodyParam secondary string no-required secondary
 * @bodyParam sort integer no-required sort

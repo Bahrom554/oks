@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Api\ApiController;
-use App\Models\History;
+use App\Models\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Modules\Translations\Entities\Langs;
@@ -11,26 +11,28 @@ use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 /**
- * @group History
+ * @group Document
  *
  */
-class HistoryController extends ApiController
+class DocumentController extends ApiController
 {
-    public $modelClass = History::class;
+    public $modelClass = Document::class;
 
     /**
-    * History Get all
+    * Document Get all
     *
     * @response {
-    *  "id": "bigint",
-*  "title": "string",
+    *  "created_at": "datetime",
+*  "deleted_at": "datetime",
 *  "description": "string",
-*  "url": "string",
 *  "file_id": "integer",
+*  "id": "bigint",
 *  "lang": "integer",
 *  "lang_hash": "string",
+*  "sort": "integer",
 *  "status": "integer",
-*  "created_at": "datetime",
+*  "title": "string",
+*  "type": "integer",
 *  "updated_at": "datetime",
 
     * "roles": ["admin"]
@@ -39,7 +41,6 @@ class HistoryController extends ApiController
     */
     public function index(Request $request)
     {
-
         $filters = $request->get('filter');
         $filter = [];
         if (!empty($filters)) {
@@ -58,20 +59,22 @@ class HistoryController extends ApiController
     }
 
     /**
-    * History view
+    * Document view
     *
     * @queryParam id required ID
     * @var $id
     * @response {
-    *  "id": "bigint",
-*  "title": "string",
+    *  "created_at": "datetime",
+*  "deleted_at": "datetime",
 *  "description": "string",
-*  "url": "string",
 *  "file_id": "integer",
+*  "id": "bigint",
 *  "lang": "integer",
 *  "lang_hash": "string",
+*  "sort": "integer",
 *  "status": "integer",
-*  "created_at": "datetime",
+*  "title": "string",
+*  "type": "integer",
 *  "updated_at": "datetime",
 
     * "roles": ["all"]
@@ -92,17 +95,19 @@ class HistoryController extends ApiController
     }
 
     /**
-     * History create
+     * Document create
      *
-     * @bodyParam id bigint no-required id
-* @bodyParam title string no-required title
+     * @bodyParam created_at datetime no-required created_at
+* @bodyParam deleted_at datetime no-required deleted_at
 * @bodyParam description string no-required description
-* @bodyParam url string no-required url
 * @bodyParam file_id integer no-required file_id
+* @bodyParam id bigint no-required id
 * @bodyParam lang integer no-required lang
 * @bodyParam lang_hash string no-required lang_hash
+* @bodyParam sort integer no-required sort
 * @bodyParam status integer no-required status
-* @bodyParam created_at datetime no-required created_at
+* @bodyParam title string no-required title
+* @bodyParam type integer no-required type
 * @bodyParam updated_at datetime no-required updated_at
 
      *
@@ -124,18 +129,20 @@ class HistoryController extends ApiController
     }
 
     /**
-     * History update
+     * Document update
      *
      * @queryParam id required ID
-     * @bodyParam id bigint no-required id
-* @bodyParam title string no-required title
+     * @bodyParam created_at datetime no-required created_at
+* @bodyParam deleted_at datetime no-required deleted_at
 * @bodyParam description string no-required description
-* @bodyParam url string no-required url
 * @bodyParam file_id integer no-required file_id
+* @bodyParam id bigint no-required id
 * @bodyParam lang integer no-required lang
 * @bodyParam lang_hash string no-required lang_hash
+* @bodyParam sort integer no-required sort
 * @bodyParam status integer no-required status
-* @bodyParam created_at datetime no-required created_at
+* @bodyParam title string no-required title
+* @bodyParam type integer no-required type
 * @bodyParam updated_at datetime no-required updated_at
 
      *
@@ -160,7 +167,7 @@ class HistoryController extends ApiController
     }
 
     /**
-     * History delete
+     * Document delete
      *
      * @queryParam id required ID
      *

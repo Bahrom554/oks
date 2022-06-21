@@ -2,42 +2,31 @@
 
 namespace App\Models;
 
-use App\Traits\Translatable;
 use Illuminate\Database\Eloquent\Model;
 
 class Statistic extends Model
-{   use Translatable;
+{
     protected $table = 'statistics';
 
-    protected $fillable = ['title', 'alias', 'status', 'type', 'lang', 'lang_hash', 'created_at', 'updated_at',];
+    protected $fillable = ['created_at', 'eur', 'lang', 'lang_hash', 'rub', 'type', 'updated_at', 'uran', 'usd',];
 
     public static function rules()
     {
         return [
-            'title' => 'string|nullable',
-            'alias' => 'string|nullable',
-            'status' => 'integer|nullable',
-            'type' => 'integer|nullable',
+            'created_at' => 'datetime|nullable',
+            'eur' => 'integer|nullable',
             'lang' => 'integer|nullable',
             'lang_hash' => 'string|nullable',
-            'created_at' => 'datetime|nullable',
+            'rub' => 'integer|nullable',
+            'type' => 'integer|nullable',
             'updated_at' => 'datetime|nullable',
+            'uran' => 'integer|nullable',
+            'usd' => 'integer|nullable',
 
         ];
     }
-    public function statisticItem(){
-
-        return $this->hasMany(StatisticItem::class,'parent_id','id')->orderBy('sort','ASC');
-    }
-    public function setTitleAttribute($value)
+    public function StatisticItem()
     {
-        $this->setTranslation($value, 'title');
+        return $this->hasMany(StatisticItem::class, 'parent_id', 'id')->orderBy('sort', 'ASC');
     }
-
-    public function getTranslationsAttribute(): array
-    {
-        return $this->getTranslation('statistics');
-    }
-
-
 }

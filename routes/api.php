@@ -261,11 +261,6 @@ Route::prefix('v1')->group(function () {
 /*--------------------------------------------------------------------------------
     Post ROUTES  => END
 --------------------------------------------------------------------------------*/
-
-
-
-
-
 /*--------------------------------------------------------------------------------
     Page ROUTES  => START
 --------------------------------------------------------------------------------*/
@@ -308,27 +303,29 @@ Route::prefix('v1')->group(function () {
         });
         /*--------------------------------------------------------------------------------
             Partner ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            History ROUTES  => START
+        --------------------------------------------------------------------------------*/
+
+
+        /*--------------------------------------------------------------------------------
+            Activity ROUTES  => START
         --------------------------------------------------------------------------------*/
         Route::prefix('v1')->group(function () {
             Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/history')->group(function () {
-                    Route::get('/', 'Api\v1\HistoryController@index');
-                    Route::post('/', 'Api\v1\HistoryController@create');
-                    Route::put('/{id}', 'Api\v1\HistoryController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\HistoryController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\HistoryController@destroy')->where('id', '[0-9]+');
+                Route::prefix('/admin/activity')->group(function () {
+                    Route::get('/', 'Api\v1\ActivityController@index');
+                    Route::post('/', 'Api\v1\ActivityController@create');
+                    Route::put('/{id}', 'Api\v1\ActivityController@update')->where('id', '[0-9]+');
+                    Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
+                    Route::delete('/{id}', 'Api\v1\ActivityController@destroy')->where('id', '[0-9]+');
                 });
             });
-            Route::prefix('/history')->group(function () {
-                Route::get('/', 'Api\v1\HistoryController@index');
-                Route::get('/{id}', 'Api\v1\HistoryController@show')->where('id', '[0-9]+');
+            Route::prefix('/activity')->group(function () {
+                Route::get('/', 'Api\v1\ActivityController@index');
+                Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
             });
         });
-        /*--------------------------------------------------------------------------------
-            History ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
+
+/*--------------------------------------------------------------------------------
             Statistic ROUTES  => START
         --------------------------------------------------------------------------------*/
         Route::prefix('v1')->group(function () {
@@ -346,87 +343,8 @@ Route::prefix('v1')->group(function () {
                 Route::get('/{id}', 'Api\v1\StatisticController@show')->where('id', '[0-9]+');
             });
         });
-
         /*--------------------------------------------------------------------------------
-            StatisticItem ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/statisticitem')->group(function () {
-                    Route::get('/', 'Api\v1\StatisticItemController@index');
-                    Route::post('/', 'Api\v1\StatisticItemController@create');
-                    Route::put('/{id}', 'Api\v1\StatisticItemController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\StatisticItemController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\StatisticItemController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/statisticitem')->group(function () {
-                Route::get('/', 'Api\v1\StatisticItemController@index');
-                Route::get('/{id}', 'Api\v1\StatisticItemController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            StatisticItem ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            Activity ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/activty')->group(function () {
-                    Route::get('/', 'Api\v1\ActivityController@index');
-                    Route::post('/', 'Api\v1\ActivityController@create');
-                    Route::put('/{id}', 'Api\v1\ActivityController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\ActivityController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/activty')->group(function () {
-                Route::get('/', 'Api\v1\ActivityController@index');
-                Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Activity ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            Activity ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/activity')->group(function () {
-                    Route::get('/', 'Api\v1\ActivityController@index');
-                    Route::post('/', 'Api\v1\ActivityController@create');
-                    Route::put('/{id}', 'Api\v1\ActivityController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\ActivityController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/activity')->group(function () {
-                Route::get('/', 'Api\v1\ActivityController@index');
-                Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Activity ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            Activity ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/activity')->group(function () {
-                    Route::get('/', 'Api\v1\ActivityController@index');
-                    Route::post('/', 'Api\v1\ActivityController@create');
-                    Route::put('/{id}', 'Api\v1\ActivityController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\ActivityController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/activity')->group(function () {
-                Route::get('/', 'Api\v1\ActivityController@index');
-                Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Activity ROUTES  => END
+            Statistic ROUTES  => END
         --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
             StatisticItem ROUTES  => START
         --------------------------------------------------------------------------------*/
@@ -447,4 +365,24 @@ Route::prefix('v1')->group(function () {
         });
         /*--------------------------------------------------------------------------------
             StatisticItem ROUTES  => END
+        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
+            Document ROUTES  => START
+        --------------------------------------------------------------------------------*/
+        Route::prefix('v1')->group(function () {
+            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
+                Route::prefix('/admin/documents')->group(function () {
+                    Route::get('/', 'Api\v1\DocumentController@index');
+                    Route::post('/', 'Api\v1\DocumentController@create');
+                    Route::put('/{id}', 'Api\v1\DocumentController@update')->where('id', '[0-9]+');
+                    Route::get('/{id}', 'Api\v1\DocumentController@show')->where('id', '[0-9]+');
+                    Route::delete('/{id}', 'Api\v1\DocumentController@destroy')->where('id', '[0-9]+');
+                });
+            });
+            Route::prefix('/documents')->group(function () {
+                Route::get('/', 'Api\v1\DocumentController@index');
+                Route::get('/{id}', 'Api\v1\DocumentController@show')->where('id', '[0-9]+');
+            });
+        });
+        /*--------------------------------------------------------------------------------
+            Document ROUTES  => END
         --------------------------------------------------------------------------------*/

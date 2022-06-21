@@ -16,6 +16,9 @@ class CreateStatisticItemTable extends Migration
         Schema::create('statistic_item', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('comparedyear')->nullable();
+            $table->integer('olddata');
+            $table->integer('data');
             $table->string('secondary')->nullable();
             $table->integer("file_id")->nullable();
             $table->string('description')->nullable();

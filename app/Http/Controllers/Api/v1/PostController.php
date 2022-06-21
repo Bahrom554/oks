@@ -63,11 +63,11 @@ class PostController extends ApiController
         $query->allowedIncludes(!empty($request->include) ? explode(',', $request->get('include')) : []);
         $query->allowedSorts($request->sort);
 
-        $query->when($request->has('tag'), function ($post) use ($request) {
-            $post->whereHas('tags', function ($q) use ($request) {
-                $q->whereName($request->tag);
-            });
-        });
+//        $query->when($request->has('tag'), function ($post) use ($request) {
+//            $post->whereHas('tags', function ($q) use ($request) {
+//                $q->whereName($request->tag);
+//            });
+//        });
 
         return $query->paginate($request->per_page);
     }

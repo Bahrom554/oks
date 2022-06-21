@@ -11,15 +11,18 @@ class StatisticItem extends Model
     protected $table = 'statistic_item';
     protected $with =['file'];
 
-    protected $fillable = ['created_at', 'deleted_at', 'description', 'file_id', 'parent_id', 'secondary', 'sort', 'status', 'title', 'updated_at',];
+    protected $fillable = ['comparedyear', 'created_at', 'data', 'deleted_at', 'description', 'file_id', 'olddata', 'parent_id', 'secondary', 'sort', 'status', 'title', 'updated_at',];
 
     public static function rules()
     {
         return [
+            'comparedyear' => 'string|nullable',
             'created_at' => 'datetime|nullable',
+            'data' => 'integer|nullable',
             'deleted_at' => 'datetime|nullable',
             'description' => 'string|nullable',
             'file_id' => 'integer|nullable',
+            'olddata' => 'integer|nullable',
             'parent_id' => 'integer|nullable',
             'secondary' => 'string|nullable',
             'sort' => 'integer|nullable',
@@ -29,7 +32,6 @@ class StatisticItem extends Model
 
         ];
     }
-
     public function file(): BelongsTo
     {
         return $this->belongsTo(Files::class);
