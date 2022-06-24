@@ -17,7 +17,6 @@ Route::get('/', function () {
     return response()->json('You are welcome to api OKSGROUP');
 });
 
-
 Route::prefix('v1')->group(function () {
 
     Route::get('/', function () {
@@ -27,10 +26,10 @@ Route::prefix('v1')->group(function () {
                 'password' => '123456789',
                 'grant_type' => 'password'
             ])->body();
-        return \Illuminate\Support\Facades\Http::post('http://192.168.88.26:7777/api/v1/oauth/token')->headers([
-            ''
-        ])->with->body();
-        return response()->json('You are welcome to api OKSGROUP');
+//        return \Illuminate\Support\Facades\Http::post('http://192.168.88.26:7777/api/v1/oauth/token')->headers([
+//            ''
+//        ])->with->body();
+//        return response()->json('You are welcome to api OKSGROUP');
     });
 
     Route::middleware('auth:Api')->group(function () {
@@ -282,107 +281,4 @@ Route::prefix('v1')->group(function () {
 });
 /*--------------------------------------------------------------------------------
     Page ROUTES  => END
---------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-/*--------------------------------------------------------------------------------
-            Partner ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/partner')->group(function () {
-                    Route::get('/', 'Api\v1\PartnerController@index');
-                    Route::post('/', 'Api\v1\PartnerController@create');
-                    Route::put('/{id}', 'Api\v1\PartnerController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\PartnerController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\PartnerController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/partner')->group(function () {
-                Route::get('/', 'Api\v1\PartnerController@index');
-                Route::get('/{id}', 'Api\v1\PartnerController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Partner ROUTES  => END
-        --------------------------------------------------------------------------------*/
-
-
-        /*--------------------------------------------------------------------------------
-            Activity ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/activity')->group(function () {
-                    Route::get('/', 'Api\v1\ActivityController@index');
-                    Route::post('/', 'Api\v1\ActivityController@create');
-                    Route::put('/{id}', 'Api\v1\ActivityController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\ActivityController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/activity')->group(function () {
-                Route::get('/', 'Api\v1\ActivityController@index');
-                Route::get('/{id}', 'Api\v1\ActivityController@show')->where('id', '[0-9]+');
-            });
-        });
-
-/*--------------------------------------------------------------------------------
-            Statistic ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/statistics')->group(function () {
-                    Route::get('/', 'Api\v1\StatisticController@index');
-                    Route::post('/', 'Api\v1\StatisticController@create');
-                    Route::put('/{id}', 'Api\v1\StatisticController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\StatisticController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\StatisticController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/statistics')->group(function () {
-                Route::get('/', 'Api\v1\StatisticController@index');
-                Route::get('/{id}', 'Api\v1\StatisticController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Statistic ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            StatisticItem ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/statistic-item')->group(function () {
-                    Route::get('/', 'Api\v1\StatisticItemController@index');
-                    Route::post('/', 'Api\v1\StatisticItemController@create');
-                    Route::put('/{id}', 'Api\v1\StatisticItemController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\StatisticItemController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\StatisticItemController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/statistic-item')->group(function () {
-                Route::get('/', 'Api\v1\StatisticItemController@index');
-                Route::get('/{id}', 'Api\v1\StatisticItemController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            StatisticItem ROUTES  => END
-        --------------------------------------------------------------------------------*//*--------------------------------------------------------------------------------
-            Document ROUTES  => START
-        --------------------------------------------------------------------------------*/
-        Route::prefix('v1')->group(function () {
-            Route::middleware(['auth:Api', 'scope:admin'])->group(function () {
-                Route::prefix('/admin/documents')->group(function () {
-                    Route::get('/', 'Api\v1\DocumentController@index');
-                    Route::post('/', 'Api\v1\DocumentController@create');
-                    Route::put('/{id}', 'Api\v1\DocumentController@update')->where('id', '[0-9]+');
-                    Route::get('/{id}', 'Api\v1\DocumentController@show')->where('id', '[0-9]+');
-                    Route::delete('/{id}', 'Api\v1\DocumentController@destroy')->where('id', '[0-9]+');
-                });
-            });
-            Route::prefix('/documents')->group(function () {
-                Route::get('/', 'Api\v1\DocumentController@index');
-                Route::get('/{id}', 'Api\v1\DocumentController@show')->where('id', '[0-9]+');
-            });
-        });
-        /*--------------------------------------------------------------------------------
-            Document ROUTES  => END
-        --------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------------*/
