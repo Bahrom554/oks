@@ -1,26 +1,26 @@
 <?php
-//$curl = curl_init();
-//
-//curl_setopt_array($curl, array(
-//    CURLOPT_URL => 'http://192.168.88.16:7777/api/v1/oauth/token',
-//    CURLOPT_RETURNTRANSFER => true,
-//    CURLOPT_ENCODING => '',
-//    CURLOPT_MAXREDIRS => 10,
-//    CURLOPT_TIMEOUT => 0,
-//    CURLOPT_FOLLOWLOCATION => true,
-//    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//    CURLOPT_CUSTOMREQUEST => 'POST',
-//    CURLOPT_POSTFIELDS => array('username' => 'admin','password' => '123456789','grant_type' => 'password'),
-//    CURLOPT_HTTPHEADER => array(
-//        'Authorization: Basic Y29tbW9uOnRlc3QxMjM='
-//    ),
-//));
-//
-//$response = curl_exec($curl);
-//
-//curl_close($curl);
-//echo $response;
-//exit();
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+   CURLOPT_URL => 'http://192.168.88.16:7777/api/v1/oauth/token',
+   CURLOPT_RETURNTRANSFER => true,
+   CURLOPT_ENCODING => '',
+   CURLOPT_MAXREDIRS => 10,
+   CURLOPT_TIMEOUT => 0,
+   CURLOPT_FOLLOWLOCATION => true,
+   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+   CURLOPT_CUSTOMREQUEST => 'POST',
+   CURLOPT_POSTFIELDS => array('username' => 'admin','password' => '123456789','grant_type' => 'password'),
+   CURLOPT_HTTPHEADER => array(
+       'Authorization: Basic Y29tbW9uOnRlc3QxMjM='
+   ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+exit();
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
